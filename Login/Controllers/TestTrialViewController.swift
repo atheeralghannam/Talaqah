@@ -70,17 +70,39 @@ class TestTrialViewController: UIViewController {
         
         //audio
         let audPath="audios/112.mp3"
-    let starsRef = storageRef.child(audPath)
-        starsRef.downloadURL { url, error in
-                    if error != nil {
-                    // Handle any errors
-                  } else {
-                    // Get the download URL for 'images/stars.jpg'
-                        let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
-                        self.player = AVPlayer(playerItem: playerItem)
-                        self.player.play()
-            }
+//        playAudio(audioPath: audPath)
+        let starsRef = storageRef.child(audPath)
+            starsRef.downloadURL { url, error in
+                        if error != nil {
+                        // Handle any errors
+                      } else {
+                        // Get the download URL for 'images/stars.jpg'
+                            let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
+                            self.player = AVPlayer(playerItem: playerItem)
+                            self.player.play()
+                }
 
-        }}}
+            }
+        
+
+            
+        }
+//    func playAudio(audioPath: String){
+//    let starsRef = storageRef.child(audioPath)
+//        starsRef.downloadURL { url, error in
+//                    if error != nil {
+//                    // Handle any errors
+//                  } else {
+//                    // Get the download URL for 'images/stars.jpg'
+//                        let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
+//                        self.player = AVPlayer(playerItem: playerItem)
+//                        self.player.play()
+//            }
+//
+//        }
+//    }
+
+
+}
         
 

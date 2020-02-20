@@ -195,12 +195,4 @@ UserDefaults.standard.set(false, forKey:Constants.isUserLoggedIn)
  
     
 }
-//            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-//            self.performSegue(withIdentifier: "toHome", sender: nil)
 
-
-//            let alertController = UIAlertController(title: "تسجيل الخروج", message:
-//                "Hello, world!", preferredStyle: .alert)
-//            alertController.addAction(UIAlertAction(title: "هل أنت متأكد من أنك تريد تسجيل الخروج؟", style: .default))
-//
-//            self.present(alertController, animated: true, completion: nil)
