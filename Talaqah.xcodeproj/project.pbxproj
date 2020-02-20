@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		208F16772235EAAB002CF75F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F16762235EAAB002CF75F /* AppDelegate.swift */; };
+		208F16792235EAAB002CF75F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F16782235EAAB002CF75F /* LoginViewController.swift */; };
+		208F167C2235EAAB002CF75F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 208F167A2235EAAB002CF75F /* Main.storyboard */; };
+		208F167E2235EAAC002CF75F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208F167D2235EAAC002CF75F /* Assets.xcassets */; };
+		208F16892235F109002CF75F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F16882235F109002CF75F /* DesignableView.swift */; };
+		20B1568022480ADC00A70D9F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1567F22480ADC00A70D9F /* UIViewController+Extensions.swift */; };
+		45D136B923F405A700ADEA97 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D136B823F405A700ADEA97 /* Utilities.swift */; };
+		45D136C323F428BC00ADEA97 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D136C223F428BC00ADEA97 /* RegisterController.swift */; };
+		45D136C523F42CFE00ADEA97 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D136C423F42CFE00ADEA97 /* Patient.swift */; };
+		45D136C723F42D3500ADEA97 /* Trial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D136C623F42D3500ADEA97 /* Trial.swift */; };
+		88925F4423F48B2000425C75 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88925F4323F48B2000425C75 /* AccountViewController.swift */; };
+		88925F4623F48C1C00425C75 /* getTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88925F4523F48C1C00425C75 /* getTrial.swift */; };
+		AD04D3E601C8476BEDA32D34 /* Pods_Talaqah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B68241B9D7332D6CEADEED /* Pods_Talaqah.framework */; };
+		F5096F4C23E5C4AC00078322 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5096F4B23E5C4AC00078322 /* Constants.swift */; };
+		F5096F5023E5C52900078322 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5096F4F23E5C52900078322 /* HomeViewController.swift */; };
+		F518A57F23ED4C6E00A41AC8 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A57E23ED4C6E00A41AC8 /* SpeechController.swift */; };
+		F518A58123ED4CB300A41AC8 /* SpeachToText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58023ED4CB300A41AC8 /* SpeachToText.swift */; };
+		F518A58323ED4CD400A41AC8 /* LanguageToSpeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */; };
+		F518A58523ED4CE500A41AC8 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58423ED4CE500A41AC8 /* Authorization.swift */; };
+		F58FE98C23F9529100460DB6 /* editprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58FE98B23F9529100460DB6 /* editprofileViewController.swift */; };
+		F5B7BF0E23EB3AE40033B094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5B7BF0D23EB3AE40033B094 /* LaunchScreen.storyboard */; };
+		F5B7BF1023EB43E70033B094 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7BF0F23EB43E70033B094 /* Validation.swift */; };
+		F5C8DBE223FE93D60098D790 /* TestTrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C8DBE123FE93D60098D790 /* TestTrialViewController.swift */; };
+		F5DCFFEC23E5A453005B2D38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5DCFFEB23E5A453005B2D38 /* GoogleService-Info.plist */; };
+		F5FC8AB723F6AF9500BC8F63 /* validateSAID.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC8AB623F6AF9500BC8F63 /* validateSAID.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		14B68241B9D7332D6CEADEED /* Pods_Talaqah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talaqah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		208F16732235EAAB002CF75F /* Talaqah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talaqah.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		208F16762235EAAB002CF75F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		208F16782235EAAB002CF75F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		208F167B2235EAAB002CF75F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		208F167D2235EAAC002CF75F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		208F16822235EAAC002CF75F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		208F16882235F109002CF75F /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		20B1567F22480ADC00A70D9F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		45D136B823F405A700ADEA97 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		45D136C223F428BC00ADEA97 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		45D136C423F42CFE00ADEA97 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		45D136C623F42D3500ADEA97 /* Trial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trial.swift; sourceTree = "<group>"; };
+		6C7D32D6A7CD1276522B9440 /* Pods-Talaqah.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talaqah.release.xcconfig"; path = "Target Support Files/Pods-Talaqah/Pods-Talaqah.release.xcconfig"; sourceTree = "<group>"; };
+		88925F4323F48B2000425C75 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		88925F4523F48C1C00425C75 /* getTrial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getTrial.swift; sourceTree = "<group>"; };
+		AD974BAE09CCA177C47AC5CC /* Pods-Talaqah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talaqah.debug.xcconfig"; path = "Target Support Files/Pods-Talaqah/Pods-Talaqah.debug.xcconfig"; sourceTree = "<group>"; };
+		F5096F4B23E5C4AC00078322 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F5096F4F23E5C52900078322 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F518A57E23ED4C6E00A41AC8 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
+		F518A58023ED4CB300A41AC8 /* SpeachToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachToText.swift; sourceTree = "<group>"; };
+		F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageToSpeak.swift; sourceTree = "<group>"; };
+		F518A58423ED4CE500A41AC8 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		F58FE98B23F9529100460DB6 /* editprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editprofileViewController.swift; sourceTree = "<group>"; };
+		F5B7BF0D23EB3AE40033B094 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5B7BF0F23EB43E70033B094 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		F5C8DBE123FE93D60098D790 /* TestTrialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrialViewController.swift; sourceTree = "<group>"; };
+		F5DCFFEB23E5A453005B2D38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F5FC8AB623F6AF9500BC8F63 /* validateSAID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validateSAID.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		208F16702235EAAB002CF75F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD04D3E601C8476BEDA32D34 /* Pods_Talaqah.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		131208909D2DD26E6344C837 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD974BAE09CCA177C47AC5CC /* Pods-Talaqah.debug.xcconfig */,
+				6C7D32D6A7CD1276522B9440 /* Pods-Talaqah.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		208F166A2235EAAB002CF75F = {
+			isa = PBXGroup;
+			children = (
+				208F16752235EAAB002CF75F /* Login */,
+				208F16742235EAAB002CF75F /* Products */,
+				131208909D2DD26E6344C837 /* Pods */,
+				FCE6F9B21A679FDE6102A64D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		208F16742235EAAB002CF75F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				208F16732235EAAB002CF75F /* Talaqah.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		208F16752235EAAB002CF75F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				37D3037E23EC813B00DD3E0C /* Model */,
+				37D3037F23EC814B00DD3E0C /* View */,
+				37D3037D23EC812600DD3E0C /* Controllers */,
+				208F16762235EAAB002CF75F /* AppDelegate.swift */,
+				F5DCFFEB23E5A453005B2D38 /* GoogleService-Info.plist */,
+				208F16822235EAAC002CF75F /* Info.plist */,
+				208F167D2235EAAC002CF75F /* Assets.xcassets */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		37D3037D23EC812600DD3E0C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				88925F4323F48B2000425C75 /* AccountViewController.swift */,
+				88925F4523F48C1C00425C75 /* getTrial.swift */,
+				F5096F4F23E5C52900078322 /* HomeViewController.swift */,
+				20B1567F22480ADC00A70D9F /* UIViewController+Extensions.swift */,
+				208F16782235EAAB002CF75F /* LoginViewController.swift */,
+				208F16882235F109002CF75F /* DesignableView.swift */,
+				F518A57E23ED4C6E00A41AC8 /* SpeechController.swift */,
+				45D136C223F428BC00ADEA97 /* RegisterController.swift */,
+				F58FE98B23F9529100460DB6 /* editprofileViewController.swift */,
+				F5C8DBE123FE93D60098D790 /* TestTrialViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		37D3037E23EC813B00DD3E0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5B7BF0F23EB43E70033B094 /* Validation.swift */,
+				F5096F4B23E5C4AC00078322 /* Constants.swift */,
+				F518A58023ED4CB300A41AC8 /* SpeachToText.swift */,
+				F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */,
+				F518A58423ED4CE500A41AC8 /* Authorization.swift */,
+				45D136B823F405A700ADEA97 /* Utilities.swift */,
+				45D136C423F42CFE00ADEA97 /* Patient.swift */,
+				45D136C623F42D3500ADEA97 /* Trial.swift */,
+				F5FC8AB623F6AF9500BC8F63 /* validateSAID.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37D3037F23EC814B00DD3E0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5B7BF0D23EB3AE40033B094 /* LaunchScreen.storyboard */,
+				208F167A2235EAAB002CF75F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FCE6F9B21A679FDE6102A64D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14B68241B9D7332D6CEADEED /* Pods_Talaqah.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		208F16722235EAAB002CF75F /* Talaqah */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 208F16852235EAAC002CF75F /* Build configuration list for PBXNativeTarget "Talaqah" */;
+			buildPhases = (
+				7E96C22B20067FF1836F97AE /* [CP] Check Pods Manifest.lock */,
+				208F166F2235EAAB002CF75F /* Sources */,
+				208F16702235EAAB002CF75F /* Frameworks */,
+				208F16712235EAAB002CF75F /* Resources */,
+				DF15A5668FEF7CC8C72A5BD0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Talaqah;
+			productName = LoginExample;
+			productReference = 208F16732235EAAB002CF75F /* Talaqah.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		208F166B2235EAAB002CF75F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Gary Tokman";
+				TargetAttributes = {
+					208F16722235EAAB002CF75F = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1130;
+					};
+				};
+			};
+			buildConfigurationList = 208F166E2235EAAB002CF75F /* Build configuration list for PBXProject "Talaqah" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 208F166A2235EAAB002CF75F;
+			productRefGroup = 208F16742235EAAB002CF75F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				208F16722235EAAB002CF75F /* Talaqah */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		208F16712235EAAB002CF75F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5DCFFEC23E5A453005B2D38 /* GoogleService-Info.plist in Resources */,
+				F5B7BF0E23EB3AE40033B094 /* LaunchScreen.storyboard in Resources */,
+				208F167E2235EAAC002CF75F /* Assets.xcassets in Resources */,
+				208F167C2235EAAB002CF75F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7E96C22B20067FF1836F97AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Talaqah-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF15A5668FEF7CC8C72A5BD0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Talaqah/Pods-Talaqah-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Talaqah/Pods-Talaqah-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Talaqah/Pods-Talaqah-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		208F166F2235EAAB002CF75F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F518A58123ED4CB300A41AC8 /* SpeachToText.swift in Sources */,
+				F5096F4C23E5C4AC00078322 /* Constants.swift in Sources */,
+				88925F4423F48B2000425C75 /* AccountViewController.swift in Sources */,
+				45D136C723F42D3500ADEA97 /* Trial.swift in Sources */,
+				88925F4623F48C1C00425C75 /* getTrial.swift in Sources */,
+				20B1568022480ADC00A70D9F /* UIViewController+Extensions.swift in Sources */,
+				F58FE98C23F9529100460DB6 /* editprofileViewController.swift in Sources */,
+				45D136B923F405A700ADEA97 /* Utilities.swift in Sources */,
+				208F16792235EAAB002CF75F /* LoginViewController.swift in Sources */,
+				F518A58523ED4CE500A41AC8 /* Authorization.swift in Sources */,
+				208F16772235EAAB002CF75F /* AppDelegate.swift in Sources */,
+				208F16892235F109002CF75F /* DesignableView.swift in Sources */,
+				F518A57F23ED4C6E00A41AC8 /* SpeechController.swift in Sources */,
+				F5FC8AB723F6AF9500BC8F63 /* validateSAID.swift in Sources */,
+				45D136C323F428BC00ADEA97 /* RegisterController.swift in Sources */,
+				F5C8DBE223FE93D60098D790 /* TestTrialViewController.swift in Sources */,
+				F5096F5023E5C52900078322 /* HomeViewController.swift in Sources */,
+				45D136C523F42CFE00ADEA97 /* Patient.swift in Sources */,
+				F5B7BF1023EB43E70033B094 /* Validation.swift in Sources */,
+				F518A58323ED4CD400A41AC8 /* LanguageToSpeak.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		208F167A2235EAAB002CF75F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				208F167B2235EAAB002CF75F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		208F16832235EAAC002CF75F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		208F16842235EAAC002CF75F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		208F16862235EAAC002CF75F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD974BAE09CCA177C47AC5CC /* Pods-Talaqah.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J83QNYT7CV;
+				INFOPLIST_FILE = "$(SRCROOT)/Login/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KSU.Talaqah;
+				PRODUCT_NAME = Talaqah;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		208F16872235EAAC002CF75F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C7D32D6A7CD1276522B9440 /* Pods-Talaqah.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J83QNYT7CV;
+				INFOPLIST_FILE = "$(SRCROOT)/Login/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.KSU.Talaqah;
+				PRODUCT_NAME = Talaqah;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		208F166E2235EAAB002CF75F /* Build configuration list for PBXProject "Talaqah" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				208F16832235EAAC002CF75F /* Debug */,
+				208F16842235EAAC002CF75F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		208F16852235EAAC002CF75F /* Build configuration list for PBXNativeTarget "Talaqah" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				208F16862235EAAC002CF75F /* Debug */,
+				208F16872235EAAC002CF75F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 208F166B2235EAAB002CF75F /* Project object */;
+}
