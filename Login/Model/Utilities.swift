@@ -60,6 +60,7 @@ class Utilities {
        
         // Filled rounded corner style
         button.backgroundColor = primaryColor
+        button.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
         button.layer.cornerRadius = 25.0
         button.tintColor = UIColor.white
     }
@@ -73,11 +74,32 @@ class Utilities {
         button.tintColor = UIColor.black
     }
     
-    
-    static func isPasswordValid(_ password : String) -> Bool {
-        
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
-        return passwordTest.evaluate(with: password)
+    static func styleErrorLabel( label:UILabel) {
+        label.font = UIFont(name: "UIFontWeightRegular", size: 12.0)
+        label.textColor = UIColor.red
+  
     }
     
+      static func styleLabel( label:UILabel) {
+          label.font = UIFont(name: "UIFontWeightRegular", size: 17.0)
+          label.textColor = UIColor.black
+    
+      }
+      static func styleSecondaryButton( button:UIButton) {
+//          button. = UIFont(name: "UIFontWeightRegular", size: 17.0)
+          button.tintColor = primaryColor
+    
+      }
+    
+        static func styleHeaderLabel( label:UILabel) {
+            label.font = UIFont(name: "UIFontWeightRegular", size: 21)
+                    label.textColor = UIColor.black
+        }
+    
+    
+//    static func isPasswordValid(_ password : String) -> Bool {
+//
+//        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+//        return passwordTest.evaluate(with: password)
+//    }
 }
