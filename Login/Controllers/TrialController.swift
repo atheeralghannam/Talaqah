@@ -21,7 +21,9 @@ class TrialController: UIViewController {
     let db = Firestore.firestore()
     var count = 0
     var trials = [Trial]()
-    
+//    var player: AVAudioPlayer!
+    var player = AVAudioPlayer()
+
     
     //Outlet
     @IBOutlet weak var writtenCue: UILabel!
@@ -41,6 +43,20 @@ class TrialController: UIViewController {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         
+        
+         UserDefaults.standard.set("أثير", forKey: Constants.correcAnswer)
+        
+        if(count == 0){
+            prevButton.isHidden = true
+        }
+        writtenCue.text = ""
+//        getTrials()
+        showCurrentTrial()
+//        playSound()
+    }
+    
+    func showCurrentTrial(){
+       
         //image
         
         let reference = storageRef.child("images/cat.jpg")
@@ -134,11 +150,15 @@ class TrialController: UIViewController {
     }
     
     //Utility functions
-    //    func playSound( _ soundName:String) {
-    //        let url = Bundle.main.url(forResource: soundName, withExtension: "mp4")
-    //        player = try! AVAudioPlayer(contentsOf: url!)
-    //        player.play()
-    //    }
+//    func playSound(){
+//        let url = Bundle.main.path(forResource: "canYouNaming", ofType: "mp4")
+//        do{
+//            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url!))}
+//        catch{
+//            print(error)
+//        }
+//        player.play()
+//    }
     
     func getTrials(){
         db.collection("trials").getDocuments { (snapshot, error) in
