@@ -24,9 +24,12 @@ class TrialController: UIViewController {
     
     //Outlet
     @IBOutlet weak var writtenCue: UILabel!
-    @IBOutlet weak var trialImage: UIImageView!
+//    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
+    
+    @IBOutlet weak var imageView: UIImageView!
+
     
     let storageRef = Storage.storage().reference()
     var audioPlayer: AVAudioPlayer!
@@ -36,6 +39,19 @@ class TrialController: UIViewController {
     override func viewDidLoad() {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
+        
+        //image
+         
+         let reference = storageRef.child("images/cat.jpg")
+
+         // UIImageView in your ViewController
+         let imageView: UIImageView = self.imageView
+
+         // Placeholder image
+         let placeholderImage = UIImage(named: "placeholder.jpg")
+
+         // Load the image using SDWebImage
+         imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
         
          UserDefaults.standard.set("أثير", forKey: Constants.correcAnswer)
         
@@ -50,18 +66,7 @@ class TrialController: UIViewController {
     
     func showCurrentTrial(){
        
-               //image
-                
-                let reference = storageRef.child("images/brush.jpg")
 
-                // UIImageView in your ViewController
-                let trialImage: UIImageView = self.trialImage
-
-                // Placeholder image
-                let placeholderImage = UIImage(named: "placeholder.jpg")
-
-                // Load the image using SDWebImage
-                trialImage.sd_setImage(with: reference, placeholderImage: placeholderImage)
                 
                 //audio
                 

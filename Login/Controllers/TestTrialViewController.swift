@@ -58,7 +58,7 @@ class TestTrialViewController: UIViewController {
         
         //image
         
-        let reference = storageRef.child("images/brush.jpg")
+        let reference = storageRef.child("images/cat.jpg")
 
         // UIImageView in your ViewController
         let imageView: UIImageView = self.imageView
