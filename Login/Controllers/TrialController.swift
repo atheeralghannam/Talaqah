@@ -52,34 +52,53 @@ class TrialController: UIViewController {
         writtenCue.text = ""
 //        getTrials()
         showCurrentTrial()
-//        playSound()
+     playSound(filename: "canYouNaming")
     }
     
-    func showCurrentTrial(){
-       
-        //image
-        
-        let reference = storageRef.child("images/cat.jpg")
-        
-        // UIImageView in your ViewController
-        let imageView: UIImageView = self.imageView
-        
-        // Placeholder image
-        let placeholderImage = UIImage(named: "placeholder.jpg")
-        
-        // Load the image using SDWebImage
-        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
-        
-        UserDefaults.standard.set("أثير", forKey: Constants.correcAnswer)
-        
-        if(count == 0){
-            prevButton.isHidden = true
-        }
-        writtenCue.text = ""
-        //        getTrials()
-        showCurrentTrial()
-        playSound(filename: "canYouNaming")
-    }
+    
+    
+//    //image
+//     let reference = storageRef.child("images/cat.jpg")
+//
+//       // UIImageView in your ViewController
+//       let imageView: UIImageView = self.imageView
+//
+//       // Placeholder image
+//       let placeholderImage = UIImage(named: "placeholder.jpg")
+//
+//       // Load the image using SDWebImage
+//       imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
+//
+//              //audio
+//
+//              let audPath="audios/112.mp3"
+
+//    func showCurrentTrial(){
+//  
+//
+//        //image
+//
+//        let reference = storageRef.child("images/cat.jpg")
+//
+//        // UIImageView in your ViewController
+//        let imageView: UIImageView = self.imageView
+//
+//        // Placeholder image
+//        let placeholderImage = UIImage(named: "placeholder.jpg")
+//
+//        // Load the image using SDWebImage
+//        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
+//
+//        UserDefaults.standard.set("أثير", forKey: Constants.correcAnswer)
+//
+//        if(count == 0){
+//            prevButton.isHidden = true
+//        }
+//        writtenCue.text = ""
+//        //        getTrials()
+//        showCurrentTrial()
+//   
+//    }
     
     func showCurrentTrial(){
         
