@@ -7,9 +7,11 @@
 //
 
 import UIKit
-import AVFoundation
-import Speech
 import Firebase
+import FirebaseUI
+import AVFoundation
+import AVKit
+
 
 class TrialController: UIViewController {
     

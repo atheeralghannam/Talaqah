@@ -1423,7 +1423,7 @@
                     <connections>
                         <outlet property="nextButton" destination="F6H-ye-f55" id="uyj-gP-zOW"/>
                         <outlet property="prevButton" destination="gX2-d8-9HK" id="4V7-K0-YKq"/>
-                        <outlet property="trialImage" destination="5yg-ju-7yo" id="0BE-98-Go8"/>
+                        <outlet property="trialImage" destination="5yg-ju-7yo" id="HPB-ZC-O1M"/>
                         <outlet property="writtenCue" destination="Tgl-Vu-VW1" id="d5I-O7-sew"/>
                     </connections>
                 </viewController>
