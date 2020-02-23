@@ -22,6 +22,9 @@
 		88925F4623F48C1C00425C75 /* getTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88925F4523F48C1C00425C75 /* getTrial.swift */; };
 		AD04D3E601C8476BEDA32D34 /* Pods_Talaqah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B68241B9D7332D6CEADEED /* Pods_Talaqah.framework */; };
 		F5096F4C23E5C4AC00078322 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5096F4B23E5C4AC00078322 /* Constants.swift */; };
+		F50DC0732402ED1100604AAE /* SelsectWordsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DC0722402ED1100604AAE /* SelsectWordsController.swift */; };
+		F50DC0752402ED3100604AAE /* SelectCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DC0742402ED3100604AAE /* SelectCategoriesController.swift */; };
+		F50DC0772402ED5000604AAE /* TrialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DC0762402ED5000604AAE /* TrialController.swift */; };
 		F518A57F23ED4C6E00A41AC8 /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A57E23ED4C6E00A41AC8 /* SpeechController.swift */; };
 		F518A58123ED4CB300A41AC8 /* SpeachToText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58023ED4CB300A41AC8 /* SpeachToText.swift */; };
 		F518A58323ED4CD400A41AC8 /* LanguageToSpeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */; };
@@ -54,6 +57,9 @@
 		88925F4523F48C1C00425C75 /* getTrial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getTrial.swift; sourceTree = "<group>"; };
 		AD974BAE09CCA177C47AC5CC /* Pods-Talaqah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talaqah.debug.xcconfig"; path = "Target Support Files/Pods-Talaqah/Pods-Talaqah.debug.xcconfig"; sourceTree = "<group>"; };
 		F5096F4B23E5C4AC00078322 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F50DC0722402ED1100604AAE /* SelsectWordsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelsectWordsController.swift; sourceTree = "<group>"; };
+		F50DC0742402ED3100604AAE /* SelectCategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoriesController.swift; sourceTree = "<group>"; };
+		F50DC0762402ED5000604AAE /* TrialController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialController.swift; sourceTree = "<group>"; };
 		F518A57E23ED4C6E00A41AC8 /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
 		F518A58023ED4CB300A41AC8 /* SpeachToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachToText.swift; sourceTree = "<group>"; };
 		F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageToSpeak.swift; sourceTree = "<group>"; };
@@ -132,6 +138,9 @@
 				F58FE98B23F9529100460DB6 /* editprofileViewController.swift */,
 				F5C8DBE123FE93D60098D790 /* TestTrialViewController.swift */,
 				45E32E8D24004F4000F2E4F0 /* ResetPasswordViewController.swift */,
+				F50DC0722402ED1100604AAE /* SelsectWordsController.swift */,
+				F50DC0742402ED3100604AAE /* SelectCategoriesController.swift */,
+				F50DC0762402ED5000604AAE /* TrialController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -286,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50DC0752402ED3100604AAE /* SelectCategoriesController.swift in Sources */,
 				F518A58123ED4CB300A41AC8 /* SpeachToText.swift in Sources */,
 				F5096F4C23E5C4AC00078322 /* Constants.swift in Sources */,
 				88925F4423F48B2000425C75 /* AccountViewController.swift in Sources */,
@@ -300,6 +310,8 @@
 				208F16772235EAAB002CF75F /* AppDelegate.swift in Sources */,
 				208F16892235F109002CF75F /* DesignableView.swift in Sources */,
 				F518A57F23ED4C6E00A41AC8 /* SpeechController.swift in Sources */,
+				F50DC0732402ED1100604AAE /* SelsectWordsController.swift in Sources */,
+				F50DC0772402ED5000604AAE /* TrialController.swift in Sources */,
 				F5FC8AB723F6AF9500BC8F63 /* validateSAID.swift in Sources */,
 				45D136C323F428BC00ADEA97 /* RegisterController.swift in Sources */,
 				F5C8DBE223FE93D60098D790 /* TestTrialViewController.swift in Sources */,
