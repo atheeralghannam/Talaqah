@@ -33,7 +33,7 @@ class TrialController: UIViewController {
 
     
     let storageRef = Storage.storage().reference()
-    var audioPlayer: AVAudioPlayer!
+//    var audioPlayer: AVAudioPlayer!
     var playerAt = AVPlayer()
 
     //essintial function
