@@ -26,10 +26,17 @@ class TrialController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     
+    let storageRef = Storage.storage().reference()
+    var audioPlayer: AVAudioPlayer!
+    var playerAt = AVPlayer()
+
     //essintial function
     override func viewDidLoad() {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
+        
+         UserDefaults.standard.set("أثير", forKey: Constants.correcAnswer)
+        
         if(count == 0){
             prevButton.isHidden = true
         }
@@ -41,7 +48,36 @@ class TrialController: UIViewController {
     
     func showCurrentTrial(){
        
-        print(count)
+               //image
+                
+                let reference = storageRef.child("images/brush.jpg")
+
+                // UIImageView in your ViewController
+                let trialImage: UIImageView = self.trialImage
+
+                // Placeholder image
+                let placeholderImage = UIImage(named: "placeholder.jpg")
+
+                // Load the image using SDWebImage
+                trialImage.sd_setImage(with: reference, placeholderImage: placeholderImage)
+                
+                //audio
+                
+                let audPath="audios/112.mp3"
+        //        playAudio(audioPath: audPath)
+                let starsRef = storageRef.child(audPath)
+                    starsRef.downloadURL { url, error in
+                                if error != nil {
+                                // Handle any errors
+                              } else {
+                                // Get the download URL for 'images/stars.jpg'
+                                    let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
+                                    self.playerAt = AVPlayer(playerItem: playerItem)
+                                    self.playerAt.play()
+                        }
+        
+        }
+                        print(count)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
