@@ -15,6 +15,7 @@ import AVKit
 
 class TrialController: UIViewController {
     
+        var audioPlayer:AVAudioPlayer?
     
     //Vars
     let db = Firestore.firestore()
@@ -156,4 +157,26 @@ class TrialController: UIViewController {
             }
         }
     }
+    
+    
+    func playSound(filename:String) {
+           
+           // Getting the url
+           let url = Bundle.main.url(forResource: filename, withExtension: "mp3")
+           
+           // Make sure that we've got the url, otherwise abord
+           guard url != nil else {
+               return
+           }
+           
+           // Create the audio player and play the sound
+           do {
+               audioPlayer = try AVAudioPlayer(contentsOf: url!)
+               audioPlayer?.play()
+           }
+           catch {
+               print("error")
+           }
+       }
+    
 }
