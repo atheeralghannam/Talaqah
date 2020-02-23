@@ -57,6 +57,7 @@ class TestTrialViewController: UIViewController {
         
         
         //image
+        
         let reference = storageRef.child("images/brush.jpg")
 
         // UIImageView in your ViewController
@@ -69,6 +70,7 @@ class TestTrialViewController: UIViewController {
         imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
         
         //audio
+        
         let audPath="audios/112.mp3"
 //        playAudio(audioPath: audPath)
         let starsRef = storageRef.child(audPath)
