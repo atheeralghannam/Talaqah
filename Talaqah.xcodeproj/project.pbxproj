@@ -13,6 +13,7 @@
 		208F167E2235EAAC002CF75F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 208F167D2235EAAC002CF75F /* Assets.xcassets */; };
 		208F16892235F109002CF75F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F16882235F109002CF75F /* DesignableView.swift */; };
 		20B1568022480ADC00A70D9F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1567F22480ADC00A70D9F /* UIViewController+Extensions.swift */; };
+		45B21C8D2403177900184DBC /* canYouNaming.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45B21C8C2403177900184DBC /* canYouNaming.mp3 */; };
 		45D136B923F405A700ADEA97 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D136B823F405A700ADEA97 /* Utilities.swift */; };
 		45D136C323F428BC00ADEA97 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D136C223F428BC00ADEA97 /* RegisterController.swift */; };
 		45D136C523F42CFE00ADEA97 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D136C423F42CFE00ADEA97 /* Patient.swift */; };
@@ -47,7 +48,7 @@
 		208F16822235EAAC002CF75F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		208F16882235F109002CF75F /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		20B1567F22480ADC00A70D9F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		459FA39E2402FA5600EA3255 /* canYouNaming.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = canYouNaming.mp4; sourceTree = "<group>"; };
+		45B21C8C2403177900184DBC /* canYouNaming.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = canYouNaming.mp3; sourceTree = "<group>"; };
 		45D136B823F405A700ADEA97 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		45D136C223F428BC00ADEA97 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		45D136C423F42CFE00ADEA97 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
@@ -175,7 +176,7 @@
 		459FA39D2402FA2900EA3255 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				459FA39E2402FA5600EA3255 /* canYouNaming.mp4 */,
+				45B21C8C2403177900184DBC /* canYouNaming.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -251,6 +252,7 @@
 			files = (
 				F5DCFFEC23E5A453005B2D38 /* GoogleService-Info.plist in Resources */,
 				F5B7BF0E23EB3AE40033B094 /* LaunchScreen.storyboard in Resources */,
+				45B21C8D2403177900184DBC /* canYouNaming.mp3 in Resources */,
 				208F167E2235EAAC002CF75F /* Assets.xcassets in Resources */,
 				208F167C2235EAAB002CF75F /* Main.storyboard in Resources */,
 			);

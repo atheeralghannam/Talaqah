@@ -15,77 +15,77 @@ import AVKit
 
 class TrialController: UIViewController {
     
-        var audioPlayer:AVAudioPlayer?
+    var audioPlayer:AVAudioPlayer?
     
     //Vars
     let db = Firestore.firestore()
     var count = 0
     var trials = [Trial]()
-    var player: AVAudioPlayer!
+    
     
     //Outlet
     @IBOutlet weak var writtenCue: UILabel!
-//    @IBOutlet weak var imageView: UIImageView!
+    //    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
-
+    
     
     let storageRef = Storage.storage().reference()
-//    var audioPlayer: AVAudioPlayer!
+    //    var audioPlayer: AVAudioPlayer!
     var playerAt = AVPlayer()
-
+    
     //essintial function
     override func viewDidLoad() {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         
         //image
-         
-         let reference = storageRef.child("images/cat.jpg")
-
-         // UIImageView in your ViewController
-         let imageView: UIImageView = self.imageView
-
-         // Placeholder image
-         let placeholderImage = UIImage(named: "placeholder.jpg")
-
-         // Load the image using SDWebImage
-         imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
         
-         UserDefaults.standard.set("أثير", forKey: Constants.correcAnswer)
+        let reference = storageRef.child("images/cat.jpg")
+        
+        // UIImageView in your ViewController
+        let imageView: UIImageView = self.imageView
+        
+        // Placeholder image
+        let placeholderImage = UIImage(named: "placeholder.jpg")
+        
+        // Load the image using SDWebImage
+        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
+        
+        UserDefaults.standard.set("أثير", forKey: Constants.correcAnswer)
         
         if(count == 0){
             prevButton.isHidden = true
         }
         writtenCue.text = ""
-//        getTrials()
+        //        getTrials()
         showCurrentTrial()
-//        playSound("First")
+        playSound(filename: "canYouNaming")
     }
     
     func showCurrentTrial(){
-       
-
-                
-                //audio
-                
-                let audPath="audios/112.mp3"
-        //        playAudio(audioPath: audPath)
-                let starsRef = storageRef.child(audPath)
-                    starsRef.downloadURL { url, error in
-                                if error != nil {
-                                // Handle any errors
-                              } else {
-                                // Get the download URL for 'images/stars.jpg'
-                                    let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
-                                    self.playerAt = AVPlayer(playerItem: playerItem)
-                                    self.playerAt.play()
-                        }
         
+        
+        
+        //audio
+        
+        let audPath="audios/112.mp3"
+        //        playAudio(audioPath: audPath)
+        let starsRef = storageRef.child(audPath)
+        starsRef.downloadURL { url, error in
+            if error != nil {
+                // Handle any errors
+            } else {
+                // Get the download URL for 'images/stars.jpg'
+                let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
+                self.playerAt = AVPlayer(playerItem: playerItem)
+                self.playerAt.play()
+            }
+            
         }
-                        print(count)
+        print(count)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -134,11 +134,11 @@ class TrialController: UIViewController {
     }
     
     //Utility functions
-    func playSound( _ soundName:String) {
-        let url = Bundle.main.url(forResource: soundName, withExtension: "m4a")
-        player = try! AVAudioPlayer(contentsOf: url!)
-        player.play()
-    }
+    //    func playSound( _ soundName:String) {
+    //        let url = Bundle.main.url(forResource: soundName, withExtension: "mp4")
+    //        player = try! AVAudioPlayer(contentsOf: url!)
+    //        player.play()
+    //    }
     
     func getTrials(){
         db.collection("trials").getDocuments { (snapshot, error) in
@@ -160,23 +160,23 @@ class TrialController: UIViewController {
     
     
     func playSound(filename:String) {
-           
-           // Getting the url
-           let url = Bundle.main.url(forResource: filename, withExtension: "mp3")
-           
-           // Make sure that we've got the url, otherwise abord
-           guard url != nil else {
-               return
-           }
-           
-           // Create the audio player and play the sound
-           do {
-               audioPlayer = try AVAudioPlayer(contentsOf: url!)
-               audioPlayer?.play()
-           }
-           catch {
-               print("error")
-           }
-       }
+        
+        // Getting the url
+        let url = Bundle.main.url(forResource: filename, withExtension: "mp3")
+        
+        // Make sure that we've got the url, otherwise abord
+        guard url != nil else {
+            return
+        }
+        
+        // Create the audio player and play the sound
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url!)
+            audioPlayer?.play()
+        }
+        catch {
+            print("error")
+        }
+    }
     
 }
