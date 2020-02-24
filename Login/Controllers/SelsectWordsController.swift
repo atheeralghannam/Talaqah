@@ -12,7 +12,7 @@ import Firebase
 class SelsectWordsController: UIViewController {
     var adj = false
     let db = Firestore.firestore()
-
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeLeft
     }
@@ -38,29 +38,15 @@ class SelsectWordsController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         var docRef = db.collection("trials").document("names")
-         if segue.identifier == "fromWordsToTrials" {
+        if segue.identifier == "fromWordsToTrials" {
+            let destnationVC = segue.destination as! TrialController
             if adj{
-                 docRef = db.collection("trials").document("adjectives")
+                destnationVC.categories = ["adj"]
+                destnationVC.document = "adjectives"
             } else{
-                docRef = db.collection("trials").document("verbs")
+                destnationVC.categories = ["male"]
+                destnationVC.document = "verbs"
             }
-             let destnationVC = segue.destination as! TrialController
-            docRef.getDocument { (snapshot, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    if let snapshot = snapshot {
-                        var array = [Trial]()
-                        if let data = snapshot.data() {
-                            print(data)
-//                            array.append(Trial(ID: data["ID"] as! String, answer: data["Answer"] as! String, image: data["Image"] as! String, exerciseType: data["ExerciseType"] as! String, category: data["Category"] as! String, trailClass: data["Class"] as! String, cues: data["Cues"] as! Array<String>))
-                        }
-                        destnationVC.trials = array
-                    }
-                }
-            }
-
-         }
-     }
+        }
+    }
 }

@@ -9,14 +9,12 @@
 import Foundation
 struct Trial {
     
-    var ID:String
+    //var ID:String
     var answer:String
-    var image:String
-    
-    var exerciseType:String
-    var category:String
-    var trailClass:String
-    
-    var cues:Array<String>
-    
+    var name:String
+    var writtenCues:Array<String>
+    var audiosNames:Array<String>
+    var settings:Array<String>
+
+
 }

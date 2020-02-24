@@ -22,24 +22,23 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     
     //speech vaars
     var speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: Language.instance.setlanguage()))!
-       
-       var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-       
-       var recognitionTask: SFSpeechRecognitionTask?
-       
-       let audioEngine = AVAudioEngine()
-       @IBOutlet weak var recordButton: UIButton!
     
-//       @IBOutlet weak var textView: UITextView!
-       
-       
-       @IBOutlet var playButton: UIButton!
-       
+    var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    
+    var recognitionTask: SFSpeechRecognitionTask?
+    
+    let audioEngine = AVAudioEngine()
+    @IBOutlet weak var recordButton: UIButton!
+    
+    
+    
+    @IBOutlet var playButton: UIButton!
+    
     @IBOutlet var finishTrial: UIButton!
     @IBOutlet var validateButton: UIButton!
     var recordingSession: AVAudioSession!
-       var audioRecorder: AVAudioRecorder!
-       var audioPlayer: AVAudioPlayer!
+    var audioRecorder: AVAudioRecorder!
+    var audioPlayer: AVAudioPlayer!
     
     
     
@@ -50,7 +49,8 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     let db = Firestore.firestore()
     var count = 0
     var trials = [Trial]()
-
+    var categories = [String]()
+    var document = "names"
     
     //Outlet
     @IBOutlet weak var writtenCue: UILabel!
@@ -62,7 +62,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     
     
     let storageRef = Storage.storage().reference()
-
+    
     //play storage audio
     var playerAt = AVPlayer()
     
@@ -71,36 +71,50 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         
+        let docRef = db.collection("trials").document(document)
+            for category in categories {
+                let doc = docRef.collection(category)
+                doc.getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            let data = document.data()
+                            self.trials.append(Trial(answer: data["answer"] as! String , name: data["name"] as! String
+                                , writtenCues: data["writtenCues"] as! Array<String>, audiosNames: data["audiosNames"] as!
+                                    Array<String>, settings: data["settings"] as! Array<String>))
+                            print("\(document.documentID) => \(document.data())")
+                        }
+                        
+                        }
+                    }
+                }        
+        recordingSession = AVAudioSession.sharedInstance()
         
-           recordingSession = AVAudioSession.sharedInstance()
-           
-           do {
-        //       try recordingSession.setCategory(.playAndRecord, mode: .default)
-               try recordingSession.setActive(true)
-               recordingSession.requestRecordPermission { [unowned self] allowed in
-                   DispatchQueue.main.async {
-                       if allowed {
-                           self.loadRecordingUI()
-                       } else {
-                           // failed to record
-                       }
-                   }
-               }
-           } catch {
-               // failed to record!
-           }
+        do {
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        self.loadRecordingUI()
+                    } else {
+                        // failed to record
+                    }
+                }
+            }
+        } catch {
+            // failed to record!
+        }
         
         
         //here put the trial answer instead of Atheer
-         UserDefaults.standard.set("فرشة", forKey: Constants.correcAnswer)
+        UserDefaults.standard.set("فرشة", forKey: Constants.correcAnswer)
         
         if(count == 0){
             prevButton.isHidden = true
         }
         writtenCue.text = ""
-//        getTrials()
         showCurrentTrial()
-//     playSound(filename: "canYouNaming")
     }
     
     
@@ -109,9 +123,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         playButton.isHidden = true
         validateButton.isHidden=true
         recordButton.isHidden = false
-//        recordButton.setTitle("Tap to Record", for: .normal)
         recordButton.setTitle("", for: .normal)
-
     }
     
     
@@ -122,7 +134,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             //when done
             playButton.isHidden = true
             validateButton.isHidden=true
-
+            
             if #available(iOS 13.0, *) {
                 let playImage = UIImage(systemName:"stop.fill")
                 sender.setImage(playImage, for: [])
@@ -130,7 +142,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             } else {
                 // Fallback on earlier versions
             }
-
+            
         } else {
             finishRecording(success: true)
         }
@@ -153,13 +165,13 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         if UserDefaults.standard.string(forKey: Constants.currentAnswer) == nil{
             
             // create the alert
-                   let alert = UIAlertController(title: "لا توجد إجابة", message: "حاول مجددًا", preferredStyle: UIAlertController.Style.alert)
-
-                   // add an action (button)
-                   alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
-
-                   // show the alert
-                   self.present(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: "لا توجد إجابة", message: "حاول مجددًا", preferredStyle: UIAlertController.Style.alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
             
             
             
@@ -173,192 +185,166 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         
         if (UserDefaults.standard.bool(forKey: Constants.isAnswerCorrect) == true){
             
-                // create the alert
-                let alert = UIAlertController(title: "إجابة صحيحة", message: "أحسنت!", preferredStyle: UIAlertController.Style.alert)
-
-                // add an action (button)
-                alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
-
-                // show the alert
-                self.present(alert, animated: true, completion: nil)
-            }
+            // create the alert
+            let alert = UIAlertController(title: "إجابة صحيحة", message: "أحسنت!", preferredStyle: UIAlertController.Style.alert)
             
-        
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+            
+            
         else{
             
-                // create the alert
-                let alert = UIAlertController(title: "إجابة خاطئة", message: "حظ أوفر", preferredStyle: UIAlertController.Style.alert)
-
-                // add an action (button)
-                alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
-
-                // show the alert
-                self.present(alert, animated: true, completion: nil)
-            }
+            // create the alert
+            let alert = UIAlertController(title: "إجابة خاطئة", message: "حظ أوفر", preferredStyle: UIAlertController.Style.alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
         }
-        
-        
+    }
     
     
     
-        // MARK: - Recording
-        func startRecording() {
-            
+    
+    
+    // MARK: - Recording
+    func startRecording() {
         
-
-            let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
-            
-    //        let settings = [
-    //            AVFormatIDKey: Int(kAudioFormatAppleLossless),
-    //            AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
-    //            AVEncoderBitRateKey: 320000,
-    //            AVNumberOfChannelsKey: 2,
-    //            AVSampleRateKey: 44100.0 ] as [String : Any]
-
-              let settings = [
-                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                    AVSampleRateKey: 12000,
-                    AVNumberOfChannelsKey: 1,
-                    AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
-                ]
-    //
-    //        let settings = [
-    //                           AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-    //                           AVSampleRateKey: 44100,
-    //                           AVNumberOfChannelsKey: 2,
-    //                           AVEncoderAudioQualityKey:AVAudioQuality.high.rawValue
-    //                       ]
-            
-            do {
-                try recordingSession.setCategory(.record, mode: .default)
-                audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
-                audioRecorder.delegate = self
-                
-                     if  audioEngine.isRunning {
-
-                         recognitionRequest?.shouldReportPartialResults = false
-                         audioEngine.inputNode.removeTap(onBus: 0)
-                         audioEngine.stop()
-                         recognitionRequest?.endAudio()
-
-
-                         recordButton.isEnabled = true
-//                         recordButton.setTitle("Start Recording", for: [])
-                        recordButton.setTitle("", for: [])
-
-
-                     } else {
-
-                         try! startRecordingFirst()
-
-//                         recordButton.setTitle("Pause recording", for: [])
-                        recordButton.setTitle("", for: [])
-
-                     }
-                
-                
-                audioRecorder.record()
-                
-//                recordButton.setTitle("Tap to Stop", for: .normal)
-                recordButton.setTitle("", for: .normal)
-
-            } catch {
-                finishRecording(success: false)
-            }
-        }
         
-        func finishRecording(success: Bool) {
+        
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
+        
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+        
+        do {
+            try recordingSession.setCategory(.record, mode: .default)
+            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder.delegate = self
             
-            //when done
-            if #available(iOS 13.0, *) {
-                let playImage = UIImage(systemName:"mic.fill")
-                recordButton.setImage(playImage, for: [])
+            if  audioEngine.isRunning {
+                
+                recognitionRequest?.shouldReportPartialResults = false
+                audioEngine.inputNode.removeTap(onBus: 0)
+                audioEngine.stop()
+                recognitionRequest?.endAudio()
+                
+                
+                recordButton.isEnabled = true
+                
+                recordButton.setTitle("", for: [])
+                
+                
             } else {
-                // Fallback on earlier versions
+                
+                try! startRecordingFirst()
+                
+                recordButton.setTitle("", for: [])
+                
             }
-            playButton.isHidden = false
-            validateButton.isHidden=false
-
-
             
-            audioEngine.stop()
-
-            recognitionRequest?.endAudio()
             
-            audioRecorder.stop()
-            audioRecorder = nil
+            audioRecorder.record()
             
-            if success {
-//                recordButton.setTitle("Tap to Re-record", for: .normal)
-                recordButton.setTitle("", for: .normal)
-//                playButton.setTitle("Play Your Recording", for: .normal)
-                playButton.setTitle("", for: .normal)
-
-                playButton.isHidden = false
-        
-            } else {
-                recordButton.setTitle("Tap to Record", for: .normal)
-                playButton.isHidden = true
-                // recording failed :(
-            }
+          
+            recordButton.setTitle("", for: .normal)
+            
+        } catch {
+            finishRecording(success: false)
         }
+    }
+    
+    func finishRecording(success: Bool) {
         
-        
-        // MARK: - Playback
-        
-        func startPlayback() {
-            let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
-            do {
-                try recordingSession.setCategory(.playback, mode: .default)
-                audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
-                audioPlayer.delegate = self
-                audioPlayer.play()
-//                playButton.setTitle("Stop Playback", for: .normal)
-                playButton.setTitle("", for: .normal)
-            } catch {
-                playButton.isHidden = true
-                // unable to play recording!
-            }
+        //when done
+        if #available(iOS 13.0, *) {
+            let playImage = UIImage(systemName:"mic.fill")
+            recordButton.setImage(playImage, for: [])
+        } else {
+            // Fallback on earlier versions
         }
+        playButton.isHidden = false
+        validateButton.isHidden=false
         
-        func finishPlayback() {
-            audioPlayer = nil
-//            playButton.setTitle("Play Your Recording", for: .normal)
+        
+        
+        audioEngine.stop()
+        
+        recognitionRequest?.endAudio()
+        
+        audioRecorder.stop()
+        audioRecorder = nil
+        
+        if success {
+            recordButton.setTitle("", for: .normal)
             playButton.setTitle("", for: .normal)
-
             
+            playButton.isHidden = false
+            
+        } else {
+            recordButton.setTitle("Tap to Record", for: .normal)
+            playButton.isHidden = true
+            // recording failed :(
         }
-
-
-        override func viewDidAppear(_ animated: Bool) {
-            
-            speechRecognizer.delegate = self
-            requestAuthorization()
-        
-            
-        }
+    }
     
-
+    
+    // MARK: - Playback
+    
+    func startPlayback() {
+        let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
+        do {
+            try recordingSession.setCategory(.playback, mode: .default)
+            audioPlayer = try AVAudioPlayer(contentsOf: audioFilename)
+            audioPlayer.delegate = self
+            audioPlayer.play()
+            playButton.setTitle("", for: .normal)
+        } catch {
+            playButton.isHidden = true
+            // unable to play recording!
+        }
+    }
+    
+    func finishPlayback() {
+        audioPlayer = nil
+        playButton.setTitle("", for: .normal)
+        
+        
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        speechRecognizer.delegate = self
+        requestAuthorization()
+    }
+    
+    
     func showCurrentTrial(){
+        //image
+        let reference = storageRef.child("images/brush.jpg")
         
+        // UIImageView in your ViewController
+        let imageView: UIImageView = self.imageView
         
-            //image
-             let reference = storageRef.child("images/brush.jpg")
+        // Placeholder image
+        let placeholderImage = UIImage(named: "placeholder.jpg")
         
-               // UIImageView in your ViewController
-               let imageView: UIImageView = self.imageView
+        // Load the image using SDWebImage
+        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage) { (image, error, cache, url) in
+            self.playSound(filename: "canYouNaming")
+        }
         
-               // Placeholder image
-               let placeholderImage = UIImage(named: "placeholder.jpg")
-        
-               // Load the image using SDWebImage
-               imageView.sd_setImage(with: reference, placeholderImage: placeholderImage) { (image, error, cache, url) in
-                self.playSound(filename: "canYouNaming")
-               }
-        
-//        .sd_setImage(with: reference, placeholderImage: placeholderImage,options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
-            
-         // Perform operation.
+        // Perform operation.
         //audio
         
         let audPath="audios/112.mp3"
@@ -408,49 +394,12 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         }
     }
     
-    @IBAction func Record(_ sender: UIButton) {
-        
-        
-//        //when done
-//        if #available(iOS 13.0, *) {
-//            let playImage = UIImage(systemName:"stop.fill")
-//            sender.setImage(playImage, for: [])
-//        } else {
-//            // Fallback on earlier versions
-//        }
-    }
-    
     @IBAction func cuesPressed(_ sender: UIButton) {
+        print("hello", trials)
+
     }
     
     //Utility functions
-//    func playSound(){
-//        let url = Bundle.main.path(forResource: "canYouNaming", ofType: "mp4")
-//        do{
-//            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url!))}
-//        catch{
-//            print(error)
-//        }
-//        player.play()
-//    }
-    
-    func getTrials(){
-        db.collection("trials").getDocuments { (snapshot, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                if let snapshot = snapshot {
-                    var array = [Trial]()
-                    for document in snapshot.documents {
-                        let data = document.data()
-                        print(data)
-                        array.append(Trial(ID: data["ID"] as! String, answer: data["Answer"] as! String, image: data["Image"] as! String, exerciseType: data["ExerciseType"] as! String, category: data["Category"] as! String, trailClass: data["Class"] as! String, cues: data["Cues"] as! Array<String>))
-                    }
-                    self.trials = array
-                }
-            }
-        }
-    }
     
     
     func playSound(filename:String) {

@@ -56,36 +56,10 @@ class SelectCategoriesController: UIViewController {
         self.performSegue(withIdentifier: "goToWords", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let docRef = db.collection("trials").document("names")
         if segue.identifier == "fromCatiegoriesToTrial" {
             let destnationVC = segue.destination as! TrialController
-            for category in categories {
-                let doc = docRef.collection(category)
-                doc.getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            print("\(document.documentID) => \(document.data())")
-                        }
-                    }
-                }
-            }
-            docRef.getDocument { (snapshot, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    if let snapshot = snapshot {
-                        var array = [Trial]()
-                        if let data = snapshot.data() {
-                            print(data)
-//                            array.append(Trial(ID: data["ID"] as! String, answer: data["Answer"] as! String, image: data["Image"] as! String, exerciseType: data["ExerciseType"] as! String, category: data["Category"] as! String, trailClass: data["Class"] as! String, cues: data["Cues"] as! Array<String>))
-                        }
-                        destnationVC.trials = array
-                    }
-                }
-            }
-            
+            destnationVC.categories = categories
+            destnationVC.document = "names"
         }
     }
 }
