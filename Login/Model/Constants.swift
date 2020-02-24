@@ -14,6 +14,7 @@ struct Constants {
            static let userUid = "userUid"
     static let correcAnswer = "correcAnswer"
     static let currentAnswer = "currentAnswer"
+    static let isAnswerCorrect="isAnswerCorrect"
 
     
     
