@@ -40,7 +40,11 @@ extension TrialController{
             var isFinal = false
             if(result?.bestTranscription.formattedString != nil){
                 DispatchQueue.main.async {
-                    self.textView.text =  (result?.bestTranscription.formattedString)!}
+                    
+                    //todo textView speech
+//                    self.textView.text =  (result?.bestTranscription.formattedString)!
+                    
+                }
                 
             }
             
@@ -52,7 +56,9 @@ extension TrialController{
                 
                 //here
 
-                
+                if command==nil{
+                    UserDefaults.standard.set(nil, forKey: Constants.currentAnswer)
+                    return}
                 
                 if command != nil {
                     
@@ -60,6 +66,8 @@ extension TrialController{
                     
                       let w2 = command
                       
+                             UserDefaults.standard.set(command, forKey: Constants.currentAnswer)
+                    
                       print(w1)
                     print(w1?.count)
                     for char in w1! {
@@ -82,6 +90,8 @@ extension TrialController{
                         print("Found character: \(char)")
                     }
                       print(w1==realword)
+                    UserDefaults.standard.set(w1==realword, forKey:Constants.isAnswerCorrect)
+
                     self.audioEngine.inputNode.removeTap(onBus: 0)
                     
                     self.audioEngine.stop()
