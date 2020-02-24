@@ -35,6 +35,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
        
        @IBOutlet var playButton: UIButton!
        
+    @IBOutlet var finishTrial: UIButton!
     @IBOutlet var validateButton: UIButton!
     var recordingSession: AVAudioSession!
        var audioRecorder: AVAudioRecorder!
