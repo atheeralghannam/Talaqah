@@ -30,6 +30,7 @@
 		F518A58123ED4CB300A41AC8 /* SpeachToText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58023ED4CB300A41AC8 /* SpeachToText.swift */; };
 		F518A58323ED4CD400A41AC8 /* LanguageToSpeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */; };
 		F518A58523ED4CE500A41AC8 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58423ED4CE500A41AC8 /* Authorization.swift */; };
+		F528DD772403D5C20001A2CF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F528DD762403D5C20001A2CF /* BaseViewController.swift */; };
 		F58FE98C23F9529100460DB6 /* editprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58FE98B23F9529100460DB6 /* editprofileViewController.swift */; };
 		F5B7BF0E23EB3AE40033B094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5B7BF0D23EB3AE40033B094 /* LaunchScreen.storyboard */; };
 		F5B7BF1023EB43E70033B094 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7BF0F23EB43E70033B094 /* Validation.swift */; };
@@ -66,6 +67,7 @@
 		F518A58023ED4CB300A41AC8 /* SpeachToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachToText.swift; sourceTree = "<group>"; };
 		F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageToSpeak.swift; sourceTree = "<group>"; };
 		F518A58423ED4CE500A41AC8 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		F528DD762403D5C20001A2CF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F58FE98B23F9529100460DB6 /* editprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editprofileViewController.swift; sourceTree = "<group>"; };
 		F5B7BF0D23EB3AE40033B094 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5B7BF0F23EB43E70033B094 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				F50DC0722402ED1100604AAE /* SelsectWordsController.swift */,
 				F50DC0742402ED3100604AAE /* SelectCategoriesController.swift */,
 				F50DC0762402ED5000604AAE /* TrialController.swift */,
+				F528DD762403D5C20001A2CF /* BaseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				F5096F4C23E5C4AC00078322 /* Constants.swift in Sources */,
 				88925F4423F48B2000425C75 /* AccountViewController.swift in Sources */,
 				45D136C723F42D3500ADEA97 /* Trial.swift in Sources */,
+				F528DD772403D5C20001A2CF /* BaseViewController.swift in Sources */,
 				88925F4623F48C1C00425C75 /* getTrial.swift in Sources */,
 				20B1568022480ADC00A70D9F /* UIViewController+Extensions.swift in Sources */,
 				F58FE98C23F9529100460DB6 /* editprofileViewController.swift in Sources */,

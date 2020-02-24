@@ -19,7 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var forgetPasswordLabel: UIButton!
     @IBOutlet weak var haveAccount: UILabel!
     @IBOutlet weak var registerButton: UIButton!
-    
+
      
     
     var validation = Validation()
@@ -165,43 +165,43 @@ class LoginViewController: UIViewController, UITextFieldDelegate  {
     
     
     
-    @IBAction func signOut(_ sender: Any) {
-        
-        
-        
-        let refreshAlert = UIAlertController(title: "تسجيل الخروج", message: "هل أنت متأكد من أنك تريد تسجيل الخروج؟", preferredStyle: UIAlertController.Style.alert)
-        
-        refreshAlert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { (action: UIAlertAction!) in
-            let firebaseAuth = Auth.auth()
-            do {
-                try firebaseAuth.signOut()
-                print ("signing out DONE")
-            } catch let signOutError as NSError {
-                print ("Error signing out: %@", signOutError)
-            }
-            
-            print("Handle Ok logic here")
-            UserDefaults.standard.set(false, forKey:Constants.isUserLoggedIn)
-            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-            
-            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            
-            let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-            
-            appDel.window?.rootViewController = loginVC
-            
-            
-        }))
-        
-        refreshAlert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { (action: UIAlertAction!) in
-            print("Handle Cancel Logic here")
-        }))
-        
-        present(refreshAlert, animated: true, completion: nil)
-        
-        
-        
-    }
+//    @IBAction func signOut(_ sender: Any) {
+//
+//
+//
+//        let refreshAlert = UIAlertController(title: "تسجيل الخروج", message: "هل أنت متأكد من أنك تريد تسجيل الخروج؟", preferredStyle: UIAlertController.Style.alert)
+//
+//        refreshAlert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { (action: UIAlertAction!) in
+//            let firebaseAuth = Auth.auth()
+//            do {
+//                try firebaseAuth.signOut()
+//                print ("signing out DONE")
+//            } catch let signOutError as NSError {
+//                print ("Error signing out: %@", signOutError)
+//            }
+//
+//            print("Handle Ok logic here")
+//            UserDefaults.standard.set(false, forKey:Constants.isUserLoggedIn)
+//            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+//
+//            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//
+//            let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+//
+//            appDel.window?.rootViewController = loginVC
+//
+//
+//        }))
+//
+//        refreshAlert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { (action: UIAlertAction!) in
+//            print("Handle Cancel Logic here")
+//        }))
+//
+//        present(refreshAlert, animated: true, completion: nil)
+//
+//
+//
+//    }
     
     @IBAction func forgetPasswordTapped(_ sender: Any) {
              self.performSegue(withIdentifier: "toResetPassword", sender: nil)
