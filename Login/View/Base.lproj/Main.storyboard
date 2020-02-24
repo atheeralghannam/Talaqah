@@ -1223,10 +1223,10 @@
                                             </barButtonItem>
                                             <barButtonItem style="plain" id="7af-2d-htJ">
                                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="m2p-yL-1AG">
-                                                    <rect key="frame" x="825" y="17" width="75" height="22"/>
+                                                    <rect key="frame" x="883" y="17" width="17" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" image="mic" catalog="system"/>
+                                                    <state key="normal" image="mic.fill" catalog="system"/>
                                                     <connections>
                                                         <action selector="recordButtonPressed:" destination="jAL-Oi-dz4" eventType="touchUpInside" id="00Q-MJ-Qsm"/>
                                                     </connections>
@@ -1234,7 +1234,7 @@
                                             </barButtonItem>
                                             <barButtonItem image="multiply.square.fill" catalog="system" style="plain" id="Oue-F2-QiZ">
                                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rkJ-mh-dd4">
-                                                    <rect key="frame" x="748" y="17" width="69" height="22"/>
+                                                    <rect key="frame" x="806" y="17" width="69" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="1" green="0.60784313729999995" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="Button" image="play.fill" catalog="system"/>
@@ -1963,7 +1963,7 @@
         <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="mic" catalog="system" width="54" height="64"/>
+        <image name="mic.fill" catalog="system" width="54" height="64"/>
         <image name="multiply.square.fill" catalog="system" width="64" height="56"/>
         <image name="play.fill" catalog="system" width="58" height="64"/>
         <image name="rectangle" catalog="system" width="64" height="46"/>

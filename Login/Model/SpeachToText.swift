@@ -109,7 +109,9 @@ extension TrialController{
     public func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         if available {
             recordButton.isEnabled = true
-            recordButton.setTitle("Start Recording", for: [])
+            recordButton.setTitle("", for: [])
+//            recordButton.setTitle("Start Recording", for: [])
+
         } else {
             recordButton.isEnabled = false
             recordButton.setTitle("Recognition not available", for: .disabled)
