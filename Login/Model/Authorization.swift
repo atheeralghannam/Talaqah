@@ -10,7 +10,7 @@
 import UIKit
 import Speech
 
-extension SpeechController{
+extension TrialController{
     
   func requestAuthorization(){
     SFSpeechRecognizer.requestAuthorization { authStatus in

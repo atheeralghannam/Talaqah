@@ -9,7 +9,7 @@
 import UIKit
 import Speech
 
-extension SpeechController{
+extension TrialController{
     
     func startRecordingFirst() throws {
         
