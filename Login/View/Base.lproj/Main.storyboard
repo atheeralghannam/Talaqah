@@ -1364,7 +1364,7 @@
                                         <color key="tintColor" red="0.97253721950000005" green="0.97254294159999999" blue="0.97255772350000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="qPh-RT-jh7">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bd3-Oq-0DF">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bd3-Oq-0DF">
                                             <rect key="frame" x="512" y="12" width="72" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="الحرف الأول">
@@ -1434,7 +1434,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPy-i7-tX4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418.840579710145" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1116" y="442"/>
         </scene>
         <!--Select Categories-->
         <scene sceneID="Bsy-Xr-xSL">
@@ -1483,7 +1483,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="V75-nK-lo5"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Body" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="body" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="ijl-J4-yxt"/>
@@ -1496,7 +1496,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="si3-us-sJG"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Personal Tool" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="personal" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="6k6-SK-1i4"/>
@@ -1509,7 +1509,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="r0P-nF-DMd"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Family" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="family" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="7eb-7j-ekt"/>
@@ -1522,7 +1522,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="SBL-T4-IkW"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Cloths" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="cloths" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="NBu-I8-k3L"/>
@@ -1535,7 +1535,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="nfM-Pt-B3N"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Food" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="food" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="5Bx-bO-iuB"/>
@@ -1548,7 +1548,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="CUT-70-z67"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Drinks" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="drinks" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="3u5-Js-DzA"/>
@@ -1626,7 +1626,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="ntQ-fx-err"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Vegetables" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="vegetables" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="2vH-PB-ePN"/>
@@ -1639,7 +1639,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="NTH-Rw-z6y"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Fruits" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="fruits" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="cqP-Ix-Zcc"/>
@@ -1652,7 +1652,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="cqK-wd-jyP"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Pots" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="pots" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="MNu-kY-XPH"/>
@@ -1678,7 +1678,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="nIn-MA-deV"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Furniture" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="furniture" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="qqf-4I-dZa"/>
@@ -1691,7 +1691,7 @@
                                                                     <constraint firstAttribute="width" constant="20" id="xvk-Z5-Zie"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.99607843139999996" green="0.68235294120000001" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Devices" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="devices" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="UfA-0U-dcN"/>
@@ -1769,7 +1769,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="zTj-zs-63z"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.95294117649999999" green="0.69411764710000001" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="Public" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="public" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="SKL-06-sr9"/>
@@ -1782,7 +1782,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="92Q-1B-TLQ"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.95294117649999999" green="0.69411764710000001" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="Transportation" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="transportation" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="EwN-pH-RzG"/>
@@ -1795,7 +1795,7 @@
                                                                     <constraint firstAttribute="width" constant="20" id="oPZ-j2-jTu"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.95294117649999999" green="0.69411764710000001" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="Jobs" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="jobs" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="7eU-L8-hLd"/>
@@ -1808,7 +1808,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="f3Z-5l-fKd"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.95294117649999999" green="0.69411764710000001" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="Animals" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="animal" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="IBE-Ng-QaB"/>
@@ -1821,7 +1821,7 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="s3h-FH-yIh"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.95294117649999999" green="0.69411764710000001" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="Shapes" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="shapes" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="5o2-5Q-P3e"/>
@@ -1834,7 +1834,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="wDS-np-TTV"/>
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.95294117649999999" green="0.69411764710000001" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <state key="normal" title="Colors" image="rectangle" catalog="system"/>
+                                                                <state key="normal" title="colors" image="rectangle" catalog="system"/>
                                                                 <state key="selected" image="checkmark.rectangle" catalog="system"/>
                                                                 <connections>
                                                                     <action selector="selectedCategories:" destination="gY9-9b-HEd" eventType="touchUpInside" id="0pc-bG-PGa"/>
@@ -1921,7 +1921,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="XY3-jQ-vro"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Next">
+                                        <state key="normal" title="التالي">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -1978,7 +1978,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zow-ph-TWF"/>
-        <segue reference="UeN-ul-rpa"/>
+        <segue reference="y0e-Pc-RST"/>
         <segue reference="r4c-Sy-fUf"/>
     </inferredMetricsTieBreakers>
 </document>

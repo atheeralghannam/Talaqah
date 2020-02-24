@@ -59,8 +59,8 @@ class SelectCategoriesController: UIViewController {
         let docRef = db.collection("trials").document("names")
         if segue.identifier == "fromCatiegoriesToTrial" {
             let destnationVC = segue.destination as! TrialController
-//            for category in categories {
-                let doc = docRef.collection("animal")
+            for category in categories {
+                let doc = docRef.collection(category)
                 doc.getDocuments() { (querySnapshot, err) in
                     if let err = err {
                         print("Error getting documents: \(err)")
@@ -70,7 +70,7 @@ class SelectCategoriesController: UIViewController {
                         }
                     }
                 }
-//            }
+            }
             docRef.getDocument { (snapshot, error) in
                 if let error = error {
                     print(error.localizedDescription)
