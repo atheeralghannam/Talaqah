@@ -52,58 +52,30 @@ class TrialController: UIViewController {
         writtenCue.text = ""
 //        getTrials()
         showCurrentTrial()
-     playSound(filename: "canYouNaming")
+//     playSound(filename: "canYouNaming")
     }
     
-    
-    
-//    //image
-//     let reference = storageRef.child("images/cat.jpg")
-//
-//       // UIImageView in your ViewController
-//       let imageView: UIImageView = self.imageView
-//
-//       // Placeholder image
-//       let placeholderImage = UIImage(named: "placeholder.jpg")
-//
-//       // Load the image using SDWebImage
-//       imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
-//
-//              //audio
-//
-//              let audPath="audios/112.mp3"
 
-//    func showCurrentTrial(){
-//  
-//
-//        //image
-//
-//        let reference = storageRef.child("images/cat.jpg")
-//
-//        // UIImageView in your ViewController
-//        let imageView: UIImageView = self.imageView
-//
-//        // Placeholder image
-//        let placeholderImage = UIImage(named: "placeholder.jpg")
-//
-//        // Load the image using SDWebImage
-//        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
-//
-//        UserDefaults.standard.set("أثير", forKey: Constants.correcAnswer)
-//
-//        if(count == 0){
-//            prevButton.isHidden = true
-//        }
-//        writtenCue.text = ""
-//        //        getTrials()
-//        showCurrentTrial()
-//   
-//    }
-    
     func showCurrentTrial(){
         
         
+            //image
+             let reference = storageRef.child("images/cat.jpg")
         
+               // UIImageView in your ViewController
+               let imageView: UIImageView = self.imageView
+        
+               // Placeholder image
+               let placeholderImage = UIImage(named: "placeholder.jpg")
+        
+               // Load the image using SDWebImage
+               imageView.sd_setImage(with: reference, placeholderImage: placeholderImage) { (image, error, cache, url) in
+                self.playSound(filename: "canYouNaming")
+               }
+        
+//        .sd_setImage(with: reference, placeholderImage: placeholderImage,options: SDWebImageOptions(rawValue: 0), completed: { (image, error, cacheType, imageURL) in
+            
+         // Perform operation.
         //audio
         
         let audPath="audios/112.mp3"
