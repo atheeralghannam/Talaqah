@@ -1151,12 +1151,9 @@
                                                         <color key="titleColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="validateButtonPressed:" destination="jAL-Oi-dz4" eventType="touchUpInside" id="TF6-gW-rpG"/>
+                                                        <segue destination="7Xl-na-fhY" kind="show" id="D4d-wA-f5I"/>
                                                     </connections>
                                                 </button>
-                                                <connections>
-                                                    <segue destination="7Xl-na-fhY" kind="show" id="1Iu-Qh-3Tw"/>
-                                                </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
