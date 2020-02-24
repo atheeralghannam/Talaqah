@@ -40,7 +40,11 @@ extension TrialController{
             var isFinal = false
             if(result?.bestTranscription.formattedString != nil){
                 DispatchQueue.main.async {
-                    self.textView.text =  (result?.bestTranscription.formattedString)!}
+                    
+                    //todo textView speech
+//                    self.textView.text =  (result?.bestTranscription.formattedString)!
+                    
+                }
                 
             }
             

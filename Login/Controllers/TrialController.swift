@@ -30,7 +30,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
        let audioEngine = AVAudioEngine()
        @IBOutlet weak var recordButton: UIButton!
     
-       @IBOutlet weak var textView: UITextView!
+//       @IBOutlet weak var textView: UITextView!
        
        
        @IBOutlet var playButton: UIButton!
