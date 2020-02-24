@@ -257,6 +257,13 @@ class AccountViewController: UIViewController {
                       }
         }
     }
-    
-    
+// ------------for disable rotate > portrait view only
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           
+       }
+       
+       override open var shouldAutorotate: Bool {
+           return false
+       }
 }

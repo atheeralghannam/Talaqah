@@ -293,6 +293,15 @@ class RegisterController: UIViewController, UITextFieldDelegate {
         return newString.length <= maxLength
     }
     
+    // ------------for disable rotate > portrait view only
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           
+       }
+       
+       override open var shouldAutorotate: Bool {
+           return false
+       }
     
     
 }

@@ -246,5 +246,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate  {
         let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
                 return newString.length <= maxLength
 }
+ // ------------for disable rotate > portrait view only
+ override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    override open var shouldAutorotate: Bool {
+        return false
+    }
     
 }
