@@ -35,7 +35,8 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
        
        @IBOutlet var playButton: UIButton!
        
-       var recordingSession: AVAudioSession!
+    @IBOutlet var validateButton: UIButton!
+    var recordingSession: AVAudioSession!
        var audioRecorder: AVAudioRecorder!
        var audioPlayer: AVAudioPlayer!
     
@@ -90,7 +91,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         
         
         //here put the trial answer instead of Atheer
-         UserDefaults.standard.set("أثير", forKey: Constants.correcAnswer)
+         UserDefaults.standard.set("فرشة", forKey: Constants.correcAnswer)
         
         if(count == 0){
             prevButton.isHidden = true
@@ -105,6 +106,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     
     func loadRecordingUI() {
         playButton.isHidden = true
+        validateButton.isHidden=true
         recordButton.isHidden = false
 //        recordButton.setTitle("Tap to Record", for: .normal)
         recordButton.setTitle("", for: .normal)
@@ -118,6 +120,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             
             //when done
             playButton.isHidden = true
+            validateButton.isHidden=true
 
             if #available(iOS 13.0, *) {
                 let playImage = UIImage(systemName:"stop.fill")
@@ -139,6 +142,63 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             finishPlayback()
         }
     }
+    
+    
+    @IBAction func validateButtonPressed(_ sender: UIButton) {
+        
+        //maybe move comparing code here
+        
+        //if nill ..... no answer
+        if UserDefaults.standard.string(forKey: Constants.currentAnswer) == nil{
+            
+            // create the alert
+                   let alert = UIAlertController(title: "لا توجد إجابة", message: "حاول مجددًا", preferredStyle: UIAlertController.Style.alert)
+
+                   // add an action (button)
+                   alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+
+                   // show the alert
+                   self.present(alert, animated: true, completion: nil)
+            
+            
+            
+            
+            
+            
+            return;
+        }
+        
+        
+        
+        if (UserDefaults.standard.bool(forKey: Constants.isAnswerCorrect) == true){
+            
+                // create the alert
+                let alert = UIAlertController(title: "إجابة صحيحة", message: "أحسنت!", preferredStyle: UIAlertController.Style.alert)
+
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+        
+        else{
+            
+                // create the alert
+                let alert = UIAlertController(title: "إجابة خاطئة", message: "حظ أوفر", preferredStyle: UIAlertController.Style.alert)
+
+                // add an action (button)
+                alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+
+                // show the alert
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+        
+    
+    
     
         // MARK: - Recording
         func startRecording() {
@@ -216,6 +276,8 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
                 // Fallback on earlier versions
             }
             playButton.isHidden = false
+            validateButton.isHidden=false
+
 
             
             audioEngine.stop()
@@ -280,7 +342,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         
         
             //image
-             let reference = storageRef.child("images/cat.jpg")
+             let reference = storageRef.child("images/brush.jpg")
         
                // UIImageView in your ViewController
                let imageView: UIImageView = self.imageView
