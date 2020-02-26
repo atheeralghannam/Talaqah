@@ -35,7 +35,10 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
        
        @IBOutlet var playButton: UIButton!
        
+    
+    
     @IBOutlet var finishTrial: UIButton!
+    
     @IBOutlet var validateButton: UIButton!
     var recordingSession: AVAudioSession!
        var audioRecorder: AVAudioRecorder!
@@ -50,7 +53,9 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     let db = Firestore.firestore()
     var count = 0
     var trials = [Trial]()
-
+    var countCoResult = 0
+    var countFaResult = 0
+    var pressed = false
     
     //Outlet
     @IBOutlet weak var writtenCue: UILabel!
@@ -60,6 +65,9 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    
+    
+   
     
     let storageRef = Storage.storage().reference()
 
@@ -108,11 +116,35 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     func loadRecordingUI() {
         playButton.isHidden = true
         validateButton.isHidden=true
+       
         recordButton.isHidden = false
 //        recordButton.setTitle("Tap to Record", for: .normal)
         recordButton.setTitle("", for: .normal)
 
     }
+    
+    @IBAction func viewResult(_ sender: UIButton) {
+        
+        print(pressed)
+        print (countCoResult)
+        print(countFaResult)
+        
+        // create the alert
+        var result = String()
+        result = "عدد الإجابات الصحيحة  " + String(countCoResult) + "\n" + "عدد الإجابات الخاطئة  " + String(countFaResult)
+            
+        let alert = UIAlertController(title: "النتيجة", message: result, preferredStyle: UIAlertController.Style.alert)
+                   
+        // add an action (button)
+        
+        alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
     
     
     @IBAction func recordButtonPressed(_ sender: UIButton) {
@@ -122,6 +154,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             //when done
             playButton.isHidden = true
             validateButton.isHidden=true
+           
 
             if #available(iOS 13.0, *) {
                 let playImage = UIImage(systemName:"stop.fill")
@@ -175,12 +208,19 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             
                 // create the alert
                 let alert = UIAlertController(title: "إجابة صحيحة", message: "أحسنت!", preferredStyle: UIAlertController.Style.alert)
+            
+//            // count correct result
+//            if(pressed && true){
+//                countCoResult = countCoResult + 1
+//                pressed = false
+//            }
 
                 // add an action (button)
                 alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
 
                 // show the alert
                 self.present(alert, animated: true, completion: nil)
+               
             }
             
         
@@ -194,6 +234,12 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
 
                 // show the alert
                 self.present(alert, animated: true, completion: nil)
+//            // count false result
+//            if(pressed && true){
+//                countFaResult = countFaResult + 1
+//                pressed = false
+//            }
+               
             }
         }
         
@@ -278,6 +324,9 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             }
             playButton.isHidden = false
             validateButton.isHidden=false
+            
+            
+            
 
 
             
@@ -295,6 +344,9 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
                 playButton.setTitle("", for: .normal)
 
                 playButton.isHidden = false
+                
+                //to count for result
+                //pressed = true
         
             } else {
                 recordButton.setTitle("Tap to Record", for: .normal)

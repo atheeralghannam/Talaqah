@@ -90,6 +90,23 @@ extension TrialController{
                         print("Found character: \(char)")
                     }
                       print(w1==realword)
+                    if (w1==realword){
+                        self.pressed = true
+                        print(self.pressed)
+                    }
+                    
+                    if (self.pressed && true){
+                        self.countCoResult = self.countCoResult + 1
+                        self.pressed = false
+                    } else {
+                        
+                        self.countFaResult = self.countFaResult + 1
+                        self.pressed = false
+                        
+                    }
+                    
+                    
+                    
                     UserDefaults.standard.set(w1==realword, forKey:Constants.isAnswerCorrect)
 
                     self.audioEngine.inputNode.removeTap(onBus: 0)
