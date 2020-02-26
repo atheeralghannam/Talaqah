@@ -13,6 +13,9 @@ class SelectCategoriesController: UIViewController {
     var categories = [String]()
     let db = Firestore.firestore()
     var isSelect = false
+    var trials = [Trial]()
+    var array = [Trial]()
+
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeLeft
@@ -58,8 +61,15 @@ class SelectCategoriesController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "fromCatiegoriesToTrial" {
             let destnationVC = segue.destination as! TrialController
-            destnationVC.categories = categories
-            destnationVC.document = "names"
+            for trial in trials {
+                for category in categories{
+                if trial.category == category {
+                    array.append(trial)
+                }
+            }
+            }
+            print(array)
+            destnationVC.trials = array
         }
     }
 }

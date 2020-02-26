@@ -54,7 +54,6 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     
     //Outlet
     @IBOutlet weak var writtenCue: UILabel!
-    //    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     
@@ -71,24 +70,6 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         
-        let docRef = db.collection("trials").document(document)
-            for category in categories {
-                let doc = docRef.collection(category)
-                doc.getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            let data = document.data()
-                            self.trials.append(Trial(answer: data["answer"] as! String , name: data["name"] as! String
-                                , writtenCues: data["writtenCues"] as! Array<String>, audiosNames: data["audiosNames"] as!
-                                    Array<String>, settings: data["settings"] as! Array<String>))
-                            print("\(document.documentID) => \(document.data())")
-                        }
-                        
-                        }
-                    }
-                }        
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -107,8 +88,6 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         }
         
         
-        //here put the trial answer instead of Atheer
-        UserDefaults.standard.set("فرشة", forKey: Constants.correcAnswer)
         
         if(count == 0){
             prevButton.isHidden = true
@@ -117,7 +96,27 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         showCurrentTrial()
     }
     
-    
+//    func setTrial(){
+//        let docRef = db.collection("trials").document(document)
+//        for category in categories {
+//            let doc = docRef.collection(category)
+//            doc.getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        let data = document.data()
+//                        self.trials.append(Trial(answer: data["answer"] as! String , name: data["name"] as! String
+//                            , writtenCues: data["writtenCues"] as! Array<String>, audiosNames: data["audiosNames"] as!
+//                                Array<String>, settings: data["settings"] as! Array<String>))
+//                        print("\(document.documentID) => \(document.data())")
+//                    }
+//                    
+//                    }
+//                }
+//            }
+//        
+//    }
     
     func loadRecordingUI() {
         playButton.isHidden = true
@@ -276,7 +275,25 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         playButton.isHidden = false
         validateButton.isHidden=false
         
-        
+        if UserDefaults.standard.string(forKey: Constants.currentAnswer) == nil {
+        if #available(iOS 13.0, *) {
+            let validateImage = UIImage(systemName:"exclamationmark")
+            validateButton.setImage(validateImage, for: [])
+            
+        } else {
+            // Fallback on earlier versions
+        }
+        }
+        else if UserDefaults.standard.bool(forKey: Constants.isAnswerCorrect) == false{
+        if #available(iOS 13.0, *) {
+            let validateImage = UIImage(systemName:"xmark")
+            validateButton.setImage(validateImage, for: [])
+            
+        } else {
+            // Fallback on earlier versions
+        }
+            
+        }
         
         audioEngine.stop()
         
@@ -329,9 +346,12 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     }
     
     
-    func showCurrentTrial(){
+   @objc func showCurrentTrial(){
         //image
-        let reference = storageRef.child("images/brush.jpg")
+    print(trials, count)
+        writtenCue.text = ""
+        let url = "images/"+trials[count].name+".jpg"
+        let reference = storageRef.child(url)
         
         // UIImageView in your ViewController
         let imageView: UIImageView = self.imageView
@@ -347,20 +367,10 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         // Perform operation.
         //audio
         
-        let audPath="audios/112.mp3"
-        //        playAudio(audioPath: audPath)
-        let starsRef = storageRef.child(audPath)
-        starsRef.downloadURL { url, error in
-            if error != nil {
-                // Handle any errors
-            } else {
-                // Get the download URL for 'images/stars.jpg'
-                let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
-                self.playerAt = AVPlayer(playerItem: playerItem)
-                self.playerAt.play()
-            }
-            
-        }
+        
+        //answer
+        //here put the trial answer instead of Atheer
+        UserDefaults.standard.set(trials[count].answer, forKey: Constants.correcAnswer)
         print(count)
     }
     
@@ -371,8 +381,9 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         return true
     }
     
-    //Coneection function
+    //Conection function
     @IBAction func goTohome(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toHome", sender: self)
     }
     
     @IBAction func SkipPressed(_ sender: UIButton) {
@@ -395,7 +406,73 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     }
     
     @IBAction func cuesPressed(_ sender: UIButton) {
-        print("hello", trials)
+        if sender.currentTitle == "المعنى" {
+           // let url = "audios/"+trials[count].audiosNames[0]+"mp3"
+            let audPath = "audios/"+trials[count].audiosNames[0]+".mp3"
+            let starsRef = storageRef.child(audPath)
+            starsRef.downloadURL { url, error in
+                if error != nil {
+                    // Handle any errors
+                    print("error")
+                } else {
+                    // Get the download URL for 'images/stars.jpg'
+                    let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
+                    self.playerAt = AVPlayer(playerItem: playerItem)
+                    self.playerAt.play()
+                }
+                
+            }
+        } else if sender.currentTitle == "جملة"{
+            let text = trials[count].writtenCues[0]
+            writtenCue.text = text
+        } else if sender.currentTitle == "الصوت الأول" {
+            let audPath = "audios/"+trials[count].audiosNames[1]+".mp3"
+                       let starsRef = storageRef.child(audPath)
+                       starsRef.downloadURL { url, error in
+                           if error != nil {
+                               // Handle any errors
+                           } else {
+                               // Get the download URL for 'images/stars.jpg'
+                               let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
+                               self.playerAt = AVPlayer(playerItem: playerItem)
+                               self.playerAt.play()
+                           }
+                           
+                       }
+        } else if sender.currentTitle == "المقطع الأول"{
+            let audPath = "audios/"+trials[count].audiosNames[2]+".mp3"
+            let starsRef = storageRef.child(audPath)
+            starsRef.downloadURL { url, error in
+                if error != nil {
+                    // Handle any errors
+                } else {
+                    // Get the download URL for 'images/stars.jpg'
+                    let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
+                    self.playerAt = AVPlayer(playerItem: playerItem)
+                    self.playerAt.play()
+                }
+            }
+        
+        } else if sender.currentTitle == "الحرف الأول"{
+            let text = trials[count].writtenCues[1]
+            writtenCue.text = text
+        } else if sender.currentTitle == "الكلمة مكتوبة" {
+            let text = trials[count].answer
+            writtenCue.text = text
+        } else if sender.currentTitle == "الكلمة منطوقة"{
+            let audPath = "audios/"+trials[count].audiosNames[3]+".mp3"
+                       let starsRef = storageRef.child(audPath)
+                       starsRef.downloadURL { url, error in
+                           if error != nil {
+                               // Handle any errors
+                           } else {
+                               // Get the download URL for 'images/stars.jpg'
+                               let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
+                               self.playerAt = AVPlayer(playerItem: playerItem)
+                               self.playerAt.play()
+                           }
+                       }
+        }
 
     }
     

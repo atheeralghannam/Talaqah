@@ -373,7 +373,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="9PA-PF-LeY" kind="show" id="B0T-sm-aLF"/>
+                                                    <action selector="Start:" destination="qtF-bu-HVV" eventType="touchUpInside" id="FcC-Vn-Nj4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjh-Ls-2j6">
@@ -427,6 +427,7 @@
                     <navigationItem key="navigationItem" id="BEV-ro-j6b"/>
                     <connections>
                         <outlet property="logout" destination="yjh-Ls-2j6" id="R8r-n6-g2Y"/>
+                        <segue destination="9PA-PF-LeY" kind="presentation" identifier="startTrial" id="WE8-wR-Ixk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWO-W2-dku" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1014,7 +1015,12 @@
                                                             <rect key="frame" x="113" y="11" width="78" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <state key="normal" title="Button" image="house.fill" catalog="system"/>
+                                                            <state key="normal" title="Button" image="house.fill" catalog="system">
+                                                                <color key="titleColor" red="0.97641795870000003" green="0.97259432079999997" blue="0.96863549950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </state>
+                                                            <connections>
+                                                                <segue destination="qtF-bu-HVV" kind="show" id="vXa-yX-ug8"/>
+                                                            </connections>
                                                         </button>
                                                     </barButtonItem>
                                                 </leftBarButtonItems>
@@ -1104,6 +1110,14 @@
                                                     </connections>
                                                 </button>
                                             </barButtonItem>
+                                            <barButtonItem style="plain" id="qP8-Gl-b2w">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Nna-vc-2Bo">
+                                                    <rect key="frame" x="249" y="11" width="68" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="0.95294117649999999" green="0.69411764710000001" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <state key="normal" title="Button" image="questionmark" catalog="system"/>
+                                                </button>
+                                            </barButtonItem>
                                         </leftBarButtonItems>
                                         <rightBarButtonItems>
                                             <barButtonItem title="-" id="mqt-4U-6La">
@@ -1168,8 +1182,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="148" translatesAutoresizingMaskIntoConstraints="NO" id="rZM-ej-Clk">
-                                        <rect key="frame" x="110.5" y="28.5" width="479" height="224"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="rZM-ej-Clk">
+                                        <rect key="frame" x="113.5" y="28.5" width="473" height="224"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gX2-d8-9HK">
                                                 <rect key="frame" x="0.0" y="101" width="82.5" height="22"/>
@@ -1179,11 +1193,11 @@
                                                     <action selector="SkipPressed:" destination="jAL-Oi-dz4" eventType="touchUpInside" id="l9n-OX-wEk"/>
                                                 </connections>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eAe-dE-wLo">
-                                                <rect key="frame" x="230.5" y="48" width="50" height="128"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zRQ-GP-hoq">
+                                                <rect key="frame" x="132.5" y="48" width="240" height="128"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-ye-f55">
-                                                <rect key="frame" x="428.5" y="101" width="50.5" height="22"/>
+                                                <rect key="frame" x="422.5" y="101" width="50.5" height="22"/>
                                                 <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Next" image="chevron.right" catalog="system"/>
                                                 <connections>
@@ -1320,18 +1334,19 @@
                         <viewLayoutGuide key="safeArea" id="lgc-rf-Edm"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="eAe-dE-wLo" id="GLT-7J-8of"/>
+                        <outlet property="imageView" destination="zRQ-GP-hoq" id="KC2-XQ-K13"/>
                         <outlet property="nextButton" destination="F6H-ye-f55" id="uyj-gP-zOW"/>
                         <outlet property="playButton" destination="rkJ-mh-dd4" id="iwl-fe-20V"/>
                         <outlet property="prevButton" destination="gX2-d8-9HK" id="4V7-K0-YKq"/>
                         <outlet property="recordButton" destination="m2p-yL-1AG" id="GTM-x3-gTM"/>
                         <outlet property="validateButton" destination="Fqc-QU-qZW" id="mkz-SC-QE0"/>
                         <outlet property="writtenCue" destination="Tgl-Vu-VW1" id="d5I-O7-sew"/>
+                        <segue destination="qtF-bu-HVV" kind="presentation" identifier="toHome" id="QwH-ex-JFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPy-i7-tX4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1418.840579710145" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1492.6339285714284" y="395.6521739130435"/>
         </scene>
         <!--Select Categories-->
         <scene sceneID="Bsy-Xr-xSL">
@@ -2060,11 +2075,12 @@
         <image name="mic.fill" catalog="system" width="54" height="64"/>
         <image name="multiply.square.fill" catalog="system" width="64" height="56"/>
         <image name="play.fill" catalog="system" width="58" height="64"/>
+        <image name="questionmark" catalog="system" width="48" height="64"/>
         <image name="rectangle" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UeN-ul-rpa"/>
-        <segue reference="Zow-ph-TWF"/>
-        <segue reference="ZG9-fj-Z8X"/>
+        <segue reference="y0e-Pc-RST"/>
+        <segue reference="WE8-wR-Ixk"/>
+        <segue reference="QwH-ex-JFG"/>
     </inferredMetricsTieBreakers>
 </document>

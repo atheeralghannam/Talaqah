@@ -13,15 +13,52 @@ import Firebase
 class BaseViewController: UIViewController {
     
     @IBOutlet weak var logout: UIButton!
-
+    let db = Firestore.firestore()
+    var trials = [Trial]()
+    var categories = ["male","female", "adj", "animal", "body"]
+    var documents = ["names", "verbs", "adjectives"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        for document in documents{
+        let docRef = db.collection("trials").document(document)
+        for category in categories {
+            let doc = docRef.collection(category)
+            doc.getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let data = document.data()
+                        self.trials.append(Trial(answer: data["answer"] as! String , name: data["name"] as! String
+                            , writtenCues: data["writtenCues"] as! Array<String>, audiosNames: data["audiosNames"] as!
+                                Array<String>, settings: data["settings"] as! Array<String>, category: category))
+                       // print("\(document.documentID) => \(document.data())")
+                    }
+                    
+                    }
+                print(self.trials)
+                }
+            }
+        }
+        print(trials)
         // Do any additional setup after loading the view.
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startTrial" {
+            let destnationVC = segue.destination as! SelsectWordsController
+            //destnationVC.categories = categories
+//            destnationVC.tri
+            destnationVC.trials = trials 
+        }
+    }
+    
+    @IBAction func Start(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "startTrial", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

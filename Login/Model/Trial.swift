@@ -15,6 +15,6 @@ struct Trial {
     var writtenCues:Array<String>
     var audiosNames:Array<String>
     var settings:Array<String>
-
+    var category : String
 
 }

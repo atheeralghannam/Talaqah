@@ -12,7 +12,9 @@ import Firebase
 class SelsectWordsController: UIViewController {
     var adj = false
     let db = Firestore.firestore()
-    
+    var trials = [Trial]()
+    var array = [Trial]()
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeLeft
     }
@@ -38,15 +40,28 @@ class SelsectWordsController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(trials)
         if segue.identifier == "fromWordsToTrials" {
             let destnationVC = segue.destination as! TrialController
             if adj{
-                destnationVC.categories = ["adj"]
-                destnationVC.document = "adjectives"
+                for trial in trials{
+                    if trial.category == "adj"{
+                        array.append(trial)
+                    }
+                }
+                destnationVC.trials = array
             } else{
-                destnationVC.categories = ["male"]
-                destnationVC.document = "verbs"
+                for trial in trials{
+                    if trial.category == "male" {
+                        array.append(trial)
+                    }
+                }
+                destnationVC.trials = array
             }
+        }
+        if segue.identifier == "fromWtoC"{
+            let destnationVC = segue.destination as! SelectCategoriesController
+            destnationVC.trials = trials
         }
     }
 }
