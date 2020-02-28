@@ -66,6 +66,14 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     var playerAt = AVPlayer()
     
     //essintial function
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
+    }
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
@@ -86,9 +94,6 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         } catch {
             // failed to record!
         }
-        
-        
-        
         if(count == 0){
             prevButton.isHidden = true
         }
@@ -96,27 +101,6 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         showCurrentTrial()
     }
     
-//    func setTrial(){
-//        let docRef = db.collection("trials").document(document)
-//        for category in categories {
-//            let doc = docRef.collection(category)
-//            doc.getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//                } else {
-//                    for document in querySnapshot!.documents {
-//                        let data = document.data()
-//                        self.trials.append(Trial(answer: data["answer"] as! String , name: data["name"] as! String
-//                            , writtenCues: data["writtenCues"] as! Array<String>, audiosNames: data["audiosNames"] as!
-//                                Array<String>, settings: data["settings"] as! Array<String>))
-//                        print("\(document.documentID) => \(document.data())")
-//                    }
-//                    
-//                    }
-//                }
-//            }
-//        
-//    }
     
     func loadRecordingUI() {
         playButton.isHidden = true
@@ -374,12 +358,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         print(count)
     }
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscapeLeft
-    }
-    override var shouldAutorotate: Bool {
-        return true
-    }
+    
     
     //Conection function
     @IBAction func goTohome(_ sender: UIButton) {

@@ -20,7 +20,8 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         for document in documents{
         let docRef = db.collection("trials").document(document)
         for category in categories {
@@ -56,7 +57,15 @@ class BaseViewController: UIViewController {
     }
     
     @IBAction func Start(_ sender: UIButton) {
+        if trials.isEmpty {
+            let alertController = UIAlertController(title: "فضلًا انتظر", message:
+                           "يتم تحميل البيانات", preferredStyle: .alert)
+                       alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                       
+                       self.present(alertController, animated: true, completion: nil)
+        }else{
         self.performSegue(withIdentifier: "startTrial", sender: self)
+        }
     }
     
     /*
