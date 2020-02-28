@@ -14,18 +14,31 @@ class SelsectWordsController: UIViewController {
     let db = Firestore.firestore()
     var trials = [Trial]()
     var array = [Trial]()
-
+    @IBOutlet weak var NamesButton: UIButton!
+    @IBOutlet weak var VerbsButton: UIButton!
+    @IBOutlet weak var AdjButton: UIButton!
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeLeft
     }
     override func viewDidLoad() {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
+        let tal = UIColor(named: "Tala")
+               let gradientLayer = CAGradientLayer()
+               gradientLayer.frame = self.view.bounds
+               gradientLayer.colors = [tal!.cgColor, UIColor.white.cgColor]
+               self.view.layer.insertSublayer(gradientLayer, at: 0)
+        setUpButtons()
     }
     override var shouldAutorotate: Bool {
         return true
     }
-    
+    func setUpButtons(){
+        Utilities.styleFilledButton(button: NamesButton)
+        Utilities.styleFilledButton(button: VerbsButton)
+        Utilities.styleFilledButton(button: AdjButton)
+    }
     @IBAction func wordButtonPressed(_ sender: UIButton) {
         if sender.currentTitle! == "الصفات"{
             adj = true
@@ -34,7 +47,7 @@ class SelsectWordsController: UIViewController {
         else if sender.currentTitle! == "الأفعال"{
             adj = false
             self.performSegue(withIdentifier: "fromWordsToTrials", sender: self)
-        }else if sender.currentTitle! == "الاسماء"{
+        }else if sender.currentTitle! == "الأسماء"{
             self.performSegue(withIdentifier: "fromWtoC", sender: self)
         }
     }

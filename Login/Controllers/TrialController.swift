@@ -50,8 +50,9 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     let db = Firestore.firestore()
     var count = 0
     var trials = [Trial]()
-    var categories = [String]()
-    var document = "names"
+    var countCoResult = 0
+    var countFaResult = 0
+    var pressed = false
     
     //Outlet
     @IBOutlet weak var writtenCue: UILabel!
@@ -81,7 +82,12 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     override func viewDidLoad() {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
-        
+//        let tal = UIColor(named: "Tala")
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = self.view.bounds
+//        gradientLayer.colors = [tal!.cgColor, UIColor.white.cgColor]
+//        self.view.layer.insertSublayer(gradientLayer, at: 0)
+
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -175,6 +181,14 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         //if nill ..... no answer
         if UserDefaults.standard.string(forKey: Constants.currentAnswer) == nil{
             
+            if #available(iOS 13.0, *) {
+                let validateImage = UIImage(systemName:"exclamationmark")
+                validateButton.setImage(validateImage, for: [])
+                
+            } else {
+                // Fallback on earlier versions
+            }
+            
             // create the alert
             let alert = UIAlertController(title: "لا توجد إجابة", message: "حاول مجددًا", preferredStyle: UIAlertController.Style.alert)
             
@@ -208,7 +222,13 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             
             
         else{
-            
+            if #available(iOS 13.0, *) {
+                let validateImage = UIImage(systemName:"xmark")
+                validateButton.setImage(validateImage, for: [])
+                
+            } else {
+                // Fallback on earlier versions
+            }
             // create the alert
             let alert = UIAlertController(title: "إجابة خاطئة", message: "حظ أوفر", preferredStyle: UIAlertController.Style.alert)
             
@@ -287,26 +307,6 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         playButton.isHidden = false
         validateButton.isHidden=false
         
-        if UserDefaults.standard.string(forKey: Constants.currentAnswer) == nil {
-        if #available(iOS 13.0, *) {
-            let validateImage = UIImage(systemName:"exclamationmark")
-            validateButton.setImage(validateImage, for: [])
-            
-        } else {
-            // Fallback on earlier versions
-        }
-        }
-        else if UserDefaults.standard.bool(forKey: Constants.isAnswerCorrect) == false{
-        if #available(iOS 13.0, *) {
-            let validateImage = UIImage(systemName:"xmark")
-            validateButton.setImage(validateImage, for: [])
-            
-        } else {
-            // Fallback on earlier versions
-        }
-            
-        }
-        
         audioEngine.stop()
         
         recognitionRequest?.endAudio()
@@ -321,17 +321,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             playButton.isHidden = false
             validateButton.isHidden=false
             
-            
-            
 
-
-            
-            audioEngine.stop()
-
-            recognitionRequest?.endAudio()
-            
-            audioRecorder.stop()
-            audioRecorder = nil
             
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
