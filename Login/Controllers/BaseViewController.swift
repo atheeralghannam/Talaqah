@@ -15,7 +15,7 @@ class BaseViewController: UIViewController {
     @IBOutlet weak var logout: UIButton!
     let db = Firestore.firestore()
     var trials = [Trial]()
-    var categories = ["male","female", "adj", "animal", "body"]
+    var categories = ["male","female", "adj", "animal", "body","personal", "family", "cloths", "food", "drinks", "vegetables", "fruits", "pots", "house", "furniture", "devices", "public", "transportation", "jobs", "shapes","colors"]
     var documents = ["names", "verbs", "adjectives"]
 
     override func viewDidLoad() {
@@ -32,9 +32,11 @@ class BaseViewController: UIViewController {
                 } else {
                     for document in querySnapshot!.documents {
                         let data = document.data()
+                        if !data.isEmpty{
                         self.trials.append(Trial(answer: data["answer"] as! String , name: data["name"] as! String
                             , writtenCues: data["writtenCues"] as! Array<String>, audiosNames: data["audiosNames"] as!
                                 Array<String>, settings: data["settings"] as! Array<String>, category: category))
+                        }
                        // print("\(document.documentID) => \(document.data())")
                     }
                     
