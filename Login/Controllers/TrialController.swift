@@ -35,6 +35,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     @IBOutlet var playButton: UIButton!
     
     @IBOutlet var finishTrial: UIButton!
+    
     @IBOutlet var validateButton: UIButton!
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
@@ -59,6 +60,9 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
+    
+    
+   
     
     let storageRef = Storage.storage().reference()
     
@@ -105,9 +109,33 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     func loadRecordingUI() {
         playButton.isHidden = true
         validateButton.isHidden=true
+       
         recordButton.isHidden = false
         recordButton.setTitle("", for: .normal)
     }
+    
+    @IBAction func viewResult(_ sender: UIButton) {
+        
+        print(pressed)
+        print (countCoResult)
+        print(countFaResult)
+        
+        // create the alert
+        var result = String()
+        result = "عدد الإجابات الصحيحة  " + String(countCoResult) + "\n" + "عدد الإجابات الخاطئة  " + String(countFaResult)
+            
+        let alert = UIAlertController(title: "النتيجة", message: result, preferredStyle: UIAlertController.Style.alert)
+                   
+        // add an action (button)
+        
+        alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
     
     
     @IBAction func recordButtonPressed(_ sender: UIButton) {
@@ -291,6 +319,19 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             playButton.setTitle("", for: .normal)
             
             playButton.isHidden = false
+            validateButton.isHidden=false
+            
+            
+            
+
+
+            
+            audioEngine.stop()
+
+            recognitionRequest?.endAudio()
+            
+            audioRecorder.stop()
+            audioRecorder = nil
             
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
