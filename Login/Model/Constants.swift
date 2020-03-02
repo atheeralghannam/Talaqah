@@ -11,6 +11,7 @@ import Foundation
 struct Constants {
     
     static let isUserLoggedIn = "userLogin"
+    static let isSlpLoggedIn="slpLogin"
            static let userUid = "userUid"
     static let correcAnswer = "correcAnswer"
     static let currentAnswer = "currentAnswer"

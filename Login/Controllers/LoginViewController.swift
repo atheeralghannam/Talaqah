@@ -203,9 +203,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate  {
 //
 //    }
     
-    @IBAction func forgetPasswordTapped(_ sender: Any) {
-             self.performSegue(withIdentifier: "toResetPassword", sender: nil)
-    }
+//    @IBAction func forgetPasswordTapped(_ sender: Any) {
+//             self.performSegue(withIdentifier: "toResetPassword", sender: nil)
+//    }
     
    
     func setUpElements() {

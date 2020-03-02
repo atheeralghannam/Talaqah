@@ -52,6 +52,18 @@ class ResetPasswordViewController: UIViewController {
                 print("Password reset email sent.")
                 self.showToast(message: "Password reset email sent.", font: UIFont(name: "Times New Roman", size: 12.0)!)
                 // Password reset email sent.
+                
+//                //if - else
+//                 if (UserDefaults.standard.bool(forKey: Constants.isUserLoggedIn) == true){
+//                    self.performSegue(withIdentifier: "toPatient", sender: nil)}
+//                 if (UserDefaults.standard.bool(forKey: Constants.isSlpLoggedIn) == true){
+//                self.performSegue(withIdentifier: "toSLP", sender: nil)
+//                }
+
+                
+
+                
+                
             }
         }
     }

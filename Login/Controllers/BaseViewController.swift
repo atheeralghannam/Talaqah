@@ -99,7 +99,7 @@ class BaseViewController: UIViewController {
             UserDefaults.standard.set(false, forKey:Constants.isUserLoggedIn)
             UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
             
-            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "startingScreen") as! UIViewController
             
             let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
             

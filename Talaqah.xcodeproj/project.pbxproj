@@ -31,6 +31,8 @@
 		F518A58123ED4CB300A41AC8 /* SpeachToText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58023ED4CB300A41AC8 /* SpeachToText.swift */; };
 		F518A58323ED4CD400A41AC8 /* LanguageToSpeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */; };
 		F518A58523ED4CE500A41AC8 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58423ED4CE500A41AC8 /* Authorization.swift */; };
+		F523F834240D247700B003CF /* slpLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F523F833240D247700B003CF /* slpLoginViewController.swift */; };
+		F523F836240D314700B003CF /* BaseSLPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F523F835240D314700B003CF /* BaseSLPViewController.swift */; };
 		F528DD772403D5C20001A2CF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F528DD762403D5C20001A2CF /* BaseViewController.swift */; };
 		F58FE98C23F9529100460DB6 /* editprofileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58FE98B23F9529100460DB6 /* editprofileViewController.swift */; };
 		F5B7BF0E23EB3AE40033B094 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5B7BF0D23EB3AE40033B094 /* LaunchScreen.storyboard */; };
@@ -69,6 +71,8 @@
 		F518A58023ED4CB300A41AC8 /* SpeachToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachToText.swift; sourceTree = "<group>"; };
 		F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageToSpeak.swift; sourceTree = "<group>"; };
 		F518A58423ED4CE500A41AC8 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		F523F833240D247700B003CF /* slpLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slpLoginViewController.swift; sourceTree = "<group>"; };
+		F523F835240D314700B003CF /* BaseSLPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSLPViewController.swift; sourceTree = "<group>"; };
 		F528DD762403D5C20001A2CF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F58FE98B23F9529100460DB6 /* editprofileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editprofileViewController.swift; sourceTree = "<group>"; };
 		F5B7BF0D23EB3AE40033B094 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				F50DC0742402ED3100604AAE /* SelectCategoriesController.swift */,
 				F50DC0762402ED5000604AAE /* TrialController.swift */,
 				F528DD762403D5C20001A2CF /* BaseViewController.swift */,
+				F523F833240D247700B003CF /* slpLoginViewController.swift */,
+				F523F835240D314700B003CF /* BaseSLPViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -331,11 +337,13 @@
 				208F16892235F109002CF75F /* DesignableView.swift in Sources */,
 				F518A57F23ED4C6E00A41AC8 /* SpeechController.swift in Sources */,
 				F50DC0732402ED1100604AAE /* SelsectWordsController.swift in Sources */,
+				F523F834240D247700B003CF /* slpLoginViewController.swift in Sources */,
 				F50DC0772402ED5000604AAE /* TrialController.swift in Sources */,
 				F5FC8AB723F6AF9500BC8F63 /* validateSAID.swift in Sources */,
 				45D136C323F428BC00ADEA97 /* RegisterController.swift in Sources */,
 				F5C8DBE223FE93D60098D790 /* TestTrialViewController.swift in Sources */,
 				45D136C523F42CFE00ADEA97 /* Patient.swift in Sources */,
+				F523F836240D314700B003CF /* BaseSLPViewController.swift in Sources */,
 				F5B7BF1023EB43E70033B094 /* Validation.swift in Sources */,
 				F518A58323ED4CD400A41AC8 /* LanguageToSpeak.swift in Sources */,
 			);

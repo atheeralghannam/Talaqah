@@ -35,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //               let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 //
 //
+                        //if - else
+
+
+        
         if (UserDefaults.standard.bool(forKey: Constants.isUserLoggedIn) == true) {
 //            let welcomeVC = mainStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
 //               self.window?.rootViewController = welcomeVC
@@ -63,7 +67,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // GOOOD TOO End
 
            }
-        else{}
+        else{
+            
+             if (UserDefaults.standard.bool(forKey: Constants.isSlpLoggedIn) == true){
+                        self.window = UIWindow(frame: UIScreen.main.bounds)
+                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                         let viewController = storyboard.instantiateViewController(withIdentifier: "SlpHomeViewController")
+            //             let navigationController = UINavigationController(rootViewController: viewController)
+                         self.window?.rootViewController = viewController // navigationController
+                         self.window?.makeKeyAndVisible()            }
+                
+                
+             else{}
+            
+        }
         
         
         
