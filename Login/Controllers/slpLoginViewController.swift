@@ -12,13 +12,11 @@ class slpLoginViewController: UIViewController {
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
     
-    @IBOutlet var haveAccount: UILabel!
     @IBOutlet var forgetPassword: UIButton!
-    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var haveAccount: UILabel!
     
-    
+    @IBOutlet var slploginButton: UIButton!
     var validation = Validation()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,11 +129,11 @@ class slpLoginViewController: UIViewController {
         // Style the elements
         Utilities.styleTextField(textfield: emailTextfield)
         Utilities.styleTextField(textfield: passwordTextfield)
-        Utilities.styleFilledButton(button: loginButton)
+        Utilities.styleFilledButton(button: slploginButton)
         
         Utilities.styleLabel(label: haveAccount)
         Utilities.styleSecondaryButton(button: forgetPassword)
-        Utilities.styleSecondaryButton(button: loginButton)
+        Utilities.styleSecondaryButton(button: slploginButton)
         
         
 //        // limit input length of id

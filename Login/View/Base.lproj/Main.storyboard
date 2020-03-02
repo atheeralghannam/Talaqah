@@ -1189,7 +1189,7 @@
                                         <rect key="frame" x="0.0" y="28.5" width="305.5" height="627"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gX2-d8-9HK">
-                                                <rect key="frame" x="0.0" y="302.5" width="81.5" height="22"/>
+                                                <rect key="frame" x="0.0" y="302.5" width="82" height="22"/>
                                                 <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Previous" image="chevron.left" catalog="system"/>
                                                 <connections>
@@ -1197,10 +1197,10 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zRQ-GP-hoq">
-                                                <rect key="frame" x="131.5" y="249.5" width="75.5" height="128"/>
+                                                <rect key="frame" x="132" y="249.5" width="74" height="128"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-ye-f55">
-                                                <rect key="frame" x="257" y="302.5" width="48.5" height="22"/>
+                                                <rect key="frame" x="256" y="302.5" width="49.5" height="22"/>
                                                 <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Next" image="chevron.right" catalog="system"/>
                                                 <connections>
@@ -2308,10 +2308,10 @@
                     <navigationItem key="navigationItem" id="9XU-g6-8dl"/>
                     <connections>
                         <outlet property="emailTextfield" destination="gHz-El-v9T" id="IFf-E5-zZf"/>
-                        <outlet property="forgetPassword" destination="8Th-7f-NMs" id="3St-PO-l2w"/>
+                        <outlet property="forgetPassword" destination="8Th-7f-NMs" id="ygJ-se-lM1"/>
                         <outlet property="haveAccount" destination="Rla-uE-Hgp" id="EeY-hg-BNC"/>
-                        <outlet property="loginButton" destination="JMm-R0-HzY" id="l8Z-B0-6n5"/>
                         <outlet property="passwordTextfield" destination="WAw-gu-ahB" id="RyN-Fc-LEu"/>
+                        <outlet property="slploginButton" destination="JMm-R0-HzY" id="K1v-bw-MhQ"/>
                         <segue destination="D19-PG-Bu2" kind="show" identifier="toSLPhome" id="zHK-9b-rot"/>
                     </connections>
                 </viewController>
@@ -2430,9 +2430,10 @@
         <image name="rectangle" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3k3-4M-DS7"/>
         <segue reference="UeN-ul-rpa"/>
         <segue reference="WE8-wR-Ixk"/>
-        <segue reference="QwH-ex-JFG"/>
+        <segue reference="r4c-Sy-fUf"/>
         <segue reference="yEk-2w-QSD"/>
         <segue reference="G5z-Ln-Bva"/>
     </inferredMetricsTieBreakers>
