@@ -31,7 +31,6 @@
 		F518A58123ED4CB300A41AC8 /* SpeachToText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58023ED4CB300A41AC8 /* SpeachToText.swift */; };
 		F518A58323ED4CD400A41AC8 /* LanguageToSpeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */; };
 		F518A58523ED4CE500A41AC8 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518A58423ED4CE500A41AC8 /* Authorization.swift */; };
-		F5221A42240E125A00CBC7B2 /* disclousre.png in Resources */ = {isa = PBXBuildFile; fileRef = F5221A41240E125A00CBC7B2 /* disclousre.png */; };
 		F5221A44240E173500CBC7B2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5221A43240E173500CBC7B2 /* DetailViewController.swift */; };
 		F523F834240D247700B003CF /* slpLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F523F833240D247700B003CF /* slpLoginViewController.swift */; };
 		F523F836240D314700B003CF /* BaseSLPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F523F835240D314700B003CF /* BaseSLPViewController.swift */; };
@@ -75,7 +74,6 @@
 		F518A58023ED4CB300A41AC8 /* SpeachToText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachToText.swift; sourceTree = "<group>"; };
 		F518A58223ED4CD400A41AC8 /* LanguageToSpeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageToSpeak.swift; sourceTree = "<group>"; };
 		F518A58423ED4CE500A41AC8 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
-		F5221A41240E125A00CBC7B2 /* disclousre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = disclousre.png; path = ../../../../Downloads/disclousre.png; sourceTree = "<group>"; };
 		F5221A43240E173500CBC7B2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F523F833240D247700B003CF /* slpLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = slpLoginViewController.swift; sourceTree = "<group>"; };
 		F523F835240D314700B003CF /* BaseSLPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSLPViewController.swift; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 		F523F838240D46D700B003CF /* Patients List */ = {
 			isa = PBXGroup;
 			children = (
-				F5221A41240E125A00CBC7B2 /* disclousre.png */,
 				F523F83B240D473700B003CF /* PatientsTableViewController.swift */,
 				F523F83F240D47A300B003CF /* TableCell.swift */,
 				F5221A43240E173500CBC7B2 /* DetailViewController.swift */,
@@ -286,7 +283,6 @@
 				F5B7BF0E23EB3AE40033B094 /* LaunchScreen.storyboard in Resources */,
 				45B21C8D2403177900184DBC /* canYouNaming.mp3 in Resources */,
 				208F167E2235EAAC002CF75F /* Assets.xcassets in Resources */,
-				F5221A42240E125A00CBC7B2 /* disclousre.png in Resources */,
 				208F167C2235EAAB002CF75F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

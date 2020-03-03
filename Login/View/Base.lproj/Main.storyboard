@@ -228,10 +228,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="wF6-Nq-cEw">
-                                        <rect key="frame" x="16" y="8" width="382" height="56"/>
+                                        <rect key="frame" x="16" y="8" width="382" height="28"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-gt-F2F">
-                                                <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
                                                 <state key="normal" image="Close button"/>
                                                 <connections>
                                                     <segue destination="jQY-cp-GtB" kind="unwind" unwindAction="unwind:" id="myb-Cl-aVl"/>
@@ -240,7 +240,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="TIh-TL-seq">
-                                        <rect key="frame" x="16" y="94" width="382" height="107.5"/>
+                                        <rect key="frame" x="16" y="66" width="382" height="107.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0G0-YE-bQO">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="33.5"/>
@@ -290,7 +290,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srj-Kr-i34">
-                                        <rect key="frame" x="16" y="231.5" width="382" height="50"/>
+                                        <rect key="frame" x="16" y="203.5" width="382" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1ip-DW-6r9"/>
@@ -308,7 +308,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="7dG-0c-h6k">
-                                        <rect key="frame" x="16" y="311.5" width="382" height="488.5"/>
+                                        <rect key="frame" x="16" y="283.5" width="382" height="516.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -2468,7 +2468,6 @@
                                 <connections>
                                     <outlet property="idLabel" destination="3e2-yX-m0g" id="PEe-fb-8Sz"/>
                                     <outlet property="nameLabel" destination="0fp-gw-WwA" id="51W-Ev-nIx"/>
-                                    <outlet property="thumbnailImageView" destination="v97-9D-Jp6" id="PGu-lY-TaL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

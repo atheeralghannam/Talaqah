@@ -13,13 +13,13 @@ class TableCell: UITableViewCell {
 
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var idLabel: UILabel!
-    @IBOutlet private var thumbnailImageView: UIImageView!
+//    @IBOutlet private var thumbnailImageView: UIImageView!
 
     override func prepareForReuse() {
         super.prepareForReuse()
         nameLabel.text = nil
         idLabel.text = nil
-        thumbnailImageView.image = nil
+//        thumbnailImageView.image = nil
     }
 
     // MARK: Cell Configuration
@@ -29,7 +29,7 @@ class TableCell: UITableViewCell {
 
         nameLabel.text = name
         idLabel.text = "رقم هوية/إقامة المريض: " + patient.NID
-        thumbnailImageView.image = UIImage(named: "disclousre.png")
+//        thumbnailImageView.image = UIImage(named: "disclousre.png")
     }
 
 }
