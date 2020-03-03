@@ -6,10 +6,12 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
 
     var patientsArray = [Patient]()
     var db: Firestore!
+    var patientId = ""
     
     @IBOutlet weak var tableView: UITableView!
 
-
+    @IBOutlet var addButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -101,6 +103,8 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
 
    cell.configurateTheCell(patientsArray[indexPath.row])
         print("Array is populated \(patientsArray)")
+//        cell.accessoryType.
+        
 
         return cell
     }
@@ -113,6 +117,47 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
        override open var shouldAutorotate: Bool {
            return false
        }
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        let refreshAlert = UIAlertController(title: "إضافة مريض", message: "ادخل رقم هوية/إقامة المريض الذي تود إضافته", preferredStyle: UIAlertController.Style.alert)
+        
+        
+        
+        refreshAlert.addTextField { (textField) in
+            textField.text = ""
+            
+        }
+        
+        refreshAlert.addAction(UIAlertAction(title: "إضافة", style: .default, handler: { [weak refreshAlert] (_) in
 
+            self.db.collection("patients")
+                .whereField("NID", isEqualTo : refreshAlert?.textFields![0].text)
+                .getDocuments() { (querySnapshot, error) in
+                    if let error = error {
+                            print(error.localizedDescription)
+                    } else if querySnapshot!.documents.count != 1 {
+                            print("More than one documents or none")
+                    } else {
+                        
+                    
+                        let document = querySnapshot!.documents.first
+                        document!.reference.updateData([
+                          "slpUid": Auth.auth().currentUser!.uid
+                        ])
+//            self.tableView.reloadData()
+                        self.patientsArray.removeAll()
+                        self.loadData()
+
+                    }}
+        }  ))
+    
+        refreshAlert.addAction(UIAlertAction(title: "إلغاء", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
 }
+
 
