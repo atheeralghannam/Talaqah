@@ -2446,7 +2446,7 @@
                                             <color key="textColor" red="0.82877155619999998" green="0.26912715970000001" blue="0.39167565110000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v97-9D-Jp6">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="disclousre" translatesAutoresizingMaskIntoConstraints="NO" id="v97-9D-Jp6">
                                             <rect key="frame" x="20" y="10" width="34" height="28"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="34" id="X37-fu-h8T"/>
@@ -2527,6 +2527,7 @@
         <image name="checkmark.rectangle" catalog="system" width="64" height="46"/>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="chevron.right" catalog="system" width="48" height="64"/>
+        <image name="disclousre" width="552" height="981"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="mic.fill" catalog="system" width="54" height="64"/>
         <image name="multiply.square.fill" catalog="system" width="64" height="56"/>
