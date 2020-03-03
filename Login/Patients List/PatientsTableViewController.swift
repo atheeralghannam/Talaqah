@@ -146,7 +146,21 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
                 } catch {
                     // this will print error description
                 print(error)
-                self.showToast(message: "رقم الهوية/الإقامة غير صالح", font: UIFont(name: "Times New Roman", size: 12.0)!)
+                    
+                    
+                    var refreshAlert = UIAlertController(title: "خطأ", message: "رقم الهوية/الإقامة غير صالح", preferredStyle: UIAlertController.Style.alert)
+
+                    refreshAlert.addAction(UIAlertAction(title: "حسنًا", style: .default, handler: { (action: UIAlertAction!) in
+                      print("Handle Ok logic here")
+                      }))
+
+//                    refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+//                      print("Handle Cancel Logic here")
+//                      }))
+
+                    self.present(refreshAlert, animated: true, completion: nil)
+//
+//                self.showToast(message: "رقم الهوية/الإقامة غير صالح", font: UIFont(name: "Times New Roman", size: 12.0)!)
                 }
 //
 //                if(){
@@ -157,7 +171,20 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
                 for element in self.patientsArray {
                     if refreshAlert?.textFields![0].text?.trimmingCharacters(in: .whitespacesAndNewlines) == element.NID{
                         
-                    self.showToast(message: "هذا المريض مضاف سابقًا بالفعل", font: UIFont(name: "Times New Roman", size: 12.0)!)
+                        
+                        
+                                          var refreshAlert = UIAlertController(title: "", message: "هذا المريض مضاف سابقًا بالفعل", preferredStyle: UIAlertController.Style.alert)
+
+                                            refreshAlert.addAction(UIAlertAction(title: "حسنًا", style: .default, handler: { (action: UIAlertAction!) in
+                                              print("Handle Ok logic here")
+                                              }))
+
+                        //                    refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                        //                      print("Handle Cancel Logic here")
+                        //                      }))
+
+                                            self.present(refreshAlert, animated: true, completion: nil)
+//                    self.showToast(message: "هذا المريض مضاف سابقًا بالفعل", font: UIFont(name: "Times New Roman", size: 12.0)!)
                         return
 
                     }
@@ -183,14 +210,38 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
                                         self.patientsArray.removeAll()
                                         self.loadData()
                                         
-                                        self.showToast(message: "تمت الإضافة بنجاح", font: UIFont(name: "Times New Roman", size: 12.0)!)
+                                        
+                                        
+                                        
+                                                          var refreshAlert = UIAlertController(title: "تمت الإضافة بنجاح", message: "", preferredStyle: UIAlertController.Style.alert)
+
+                                                            refreshAlert.addAction(UIAlertAction(title: "حسنًا", style: .default, handler: { (action: UIAlertAction!) in
+                                                              print("Handle Ok logic here")
+                                                              }))
+
+                        
+
+                                                            self.present(refreshAlert, animated: true, completion: nil)
+                                        
+                                        
+//                                        self.showToast(message: "تمت الإضافة بنجاح", font: UIFont(name: "Times New Roman", size: 12.0)!)
                                              print("empty id")
 
                                     }}
 
             } else {
                 // Text field is empty
-                self.showToast(message: "لم تقم بإدخال أية رقم", font: UIFont(name: "Times New Roman", size: 12.0)!)
+                                                  var refreshAlert = UIAlertController(title:"خطأ", message: "لم تقم بإدخال أية رقم" , preferredStyle: UIAlertController.Style.alert)
+
+                                                    refreshAlert.addAction(UIAlertAction(title: "حسنًا", style: .default, handler: { (action: UIAlertAction!) in
+                                                      print("Handle Ok logic here")
+                                                      }))
+
+                
+
+                                                    self.present(refreshAlert, animated: true, completion: nil)
+                
+//                self.showToast(message: "لم تقم بإدخال أية رقم", font: UIFont(name: "Times New Roman", size: 12.0)!)
                 print("empty id")
             }
             
