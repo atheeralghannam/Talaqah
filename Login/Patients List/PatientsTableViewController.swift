@@ -125,30 +125,75 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         refreshAlert.addTextField { (textField) in
             textField.text = ""
+            textField.keyboardType = .numberPad
+
             
         }
         
         refreshAlert.addAction(UIAlertAction(title: "إضافة", style: .default, handler: { [weak refreshAlert] (_) in
 
-            self.db.collection("patients")
-                .whereField("NID", isEqualTo : refreshAlert?.textFields![0].text)
-                .getDocuments() { (querySnapshot, error) in
-                    if let error = error {
-                            print(error.localizedDescription)
-                    } else if querySnapshot!.documents.count != 1 {
-                            print("More than one documents or none")
-                    } else {
-                        
-                    
-                        let document = querySnapshot!.documents.first
-                        document!.reference.updateData([
-                          "slpUid": Auth.auth().currentUser!.uid
-                        ])
-//            self.tableView.reloadData()
-                        self.patientsArray.removeAll()
-                        self.loadData()
+            let numOfText = refreshAlert?.textFields![0].text?.trimmingCharacters(in: .whitespacesAndNewlines).count
+            
+            if numOfText != 0 {
+                // Text field is not empty
 
-                    }}
+                
+                // how to use
+    do {
+        let resutl = try ValidateSAID.check((refreshAlert?.textFields![0].text)!)
+                    // this will print NationaltyType description
+                    print(resutl)
+                } catch {
+                    // this will print error description
+                print(error)
+                self.showToast(message: "رقم الهوية/الإقامة غير صالح", font: UIFont(name: "Times New Roman", size: 12.0)!)
+                }
+//
+//                if(){
+//                    return
+//                }
+                var foundAddedBefore=false
+                
+                for element in self.patientsArray {
+                    if refreshAlert?.textFields![0].text?.trimmingCharacters(in: .whitespacesAndNewlines) == element.NID{
+                        
+                    self.showToast(message: "هذا المريض مضاف سابقًا بالفعل", font: UIFont(name: "Times New Roman", size: 12.0)!)
+                        return
+
+                    }
+                    
+                }
+                
+                            
+                            self.db.collection("patients")
+                                .whereField("NID", isEqualTo : refreshAlert?.textFields![0].text?.trimmingCharacters(in: .whitespacesAndNewlines))
+                                .getDocuments() { (querySnapshot, error) in
+                                    if let error = error {
+                                            print(error.localizedDescription)
+                                    } else if querySnapshot!.documents.count != 1 {
+                                            print("More than one documents or none")
+                                    } else {
+                                        
+                                    
+                                        let document = querySnapshot!.documents.first
+                                        document!.reference.updateData([
+                                          "slpUid": Auth.auth().currentUser!.uid
+                                        ])
+                //            self.tableView.reloadData()
+                                        self.patientsArray.removeAll()
+                                        self.loadData()
+                                        
+                                        self.showToast(message: "تمت الإضافة بنجاح", font: UIFont(name: "Times New Roman", size: 12.0)!)
+                                             print("empty id")
+
+                                    }}
+
+            } else {
+                // Text field is empty
+                self.showToast(message: "لم تقم بإدخال أية رقم", font: UIFont(name: "Times New Roman", size: 12.0)!)
+                print("empty id")
+            }
+            
         }  ))
     
         refreshAlert.addAction(UIAlertAction(title: "إلغاء", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -157,6 +202,8 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         present(refreshAlert, animated: true, completion: nil)
     }
+    
+    
     
 }
 
