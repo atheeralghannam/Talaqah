@@ -6,7 +6,12 @@
 //
 
 import Foundation
+
 class Validation {
+
+
+
+
     public func validateName(name: String) ->Bool {
         // Length be 18 characters max and 3 characters minimum, you can always modify.
         let nameRegex = "^\\w{3,18}$"
@@ -74,4 +79,5 @@ class Validation {
     }
     
     }
+
 }
