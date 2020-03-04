@@ -588,8 +588,18 @@
                                                     <constraint firstItem="dnV-1k-Wea" firstAttribute="top" secondItem="uxq-Ja-21I" secondAttribute="top" constant="271" id="KT3-ht-WOP"/>
                                                 </constraints>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3d-ym-JMQ">
+                                                <rect key="frame" x="0.0" y="556" width="415" height="30"/>
+                                                <color key="backgroundColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="إرسال التقدم">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sendProgressPressed:" destination="UiZ-8Y-TrN" eventType="touchUpInside" id="9wq-6l-QGb"/>
+                                                </connections>
+                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGG-DE-oSL">
-                                                <rect key="frame" x="0.0" y="556" width="415" height="40"/>
+                                                <rect key="frame" x="0.0" y="586" width="415" height="10"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
                                         </subviews>
@@ -611,6 +621,7 @@
                         <outlet property="patientGender" destination="TZQ-V2-Iqi" id="9U0-Xa-Fgo"/>
                         <outlet property="patientName" destination="VoM-MH-gBK" id="egC-N2-zBc"/>
                         <outlet property="patientPhone" destination="bCr-DL-zBI" id="uq1-Ph-QCz"/>
+                        <outlet property="sendProgress" destination="i3d-ym-JMQ" id="pyc-ga-EBf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmN-Wf-37i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1160,11 +1171,11 @@
                                                 </button>
                                             </barButtonItem>
                                             <barButtonItem style="plain" id="Z3E-dF-IOp">
-                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XeE-Xb-7Cr">
-                                                    <rect key="frame" x="735" y="11" width="89" height="34"/>
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XeE-Xb-7Cr">
+                                                    <rect key="frame" x="732" y="11" width="92" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" title="إنهاء التمرين">
+                                                    <state key="normal" title="عرض النتيجة">
                                                         <color key="titleColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -1342,6 +1353,7 @@
                         <outlet property="playButton" destination="rkJ-mh-dd4" id="iwl-fe-20V"/>
                         <outlet property="prevButton" destination="gX2-d8-9HK" id="4V7-K0-YKq"/>
                         <outlet property="recordButton" destination="m2p-yL-1AG" id="GTM-x3-gTM"/>
+                        <outlet property="trialResult" destination="XeE-Xb-7Cr" id="oUD-km-FiS"/>
                         <outlet property="validateButton" destination="Fqc-QU-qZW" id="mkz-SC-QE0"/>
                         <outlet property="writtenCue" destination="Tgl-Vu-VW1" id="d5I-O7-sew"/>
                         <segue destination="qtF-bu-HVV" kind="presentation" identifier="toHome" id="QwH-ex-JFG"/>
@@ -2538,7 +2550,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="UeN-ul-rpa"/>
         <segue reference="Zow-ph-TWF"/>
-        <segue reference="kWo-SI-Pa5"/>
+        <segue reference="QwH-ex-JFG"/>
         <segue reference="yEk-2w-QSD"/>
         <segue reference="G5z-Ln-Bva"/>
     </inferredMetricsTieBreakers>
