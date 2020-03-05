@@ -32,6 +32,8 @@ class AccountViewController: UIViewController {
     
     @IBOutlet var patientPhone: UILabel!
     
+    @IBOutlet var sendProgress: UIButton!
+    
     
    
     
@@ -84,6 +86,23 @@ class AccountViewController: UIViewController {
     
     @IBAction func backToHomePage(_ sender: Any) {
         
+    }
+    
+    @IBAction func sendProgressPressed(_ sender: UIButton) {
+//        if MFMailComposeViewController.canSendMail() {
+//                let mail = MFMailComposeViewController()
+//                mail.mailComposeDelegate = self
+//                mail.setToRecipients(["you@yoursite.com"])
+//                mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+//
+//                present(mail, animated: true)
+//            } else {
+//                // show failure alert
+//            }
+//        }
+//
+//        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+//            controller.dismiss(animated: true)
     }
     
     

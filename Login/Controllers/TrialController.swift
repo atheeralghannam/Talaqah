@@ -34,7 +34,8 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     
     @IBOutlet var playButton: UIButton!
     
-    @IBOutlet var finishTrial: UIButton!
+    @IBOutlet var trialResult: UIButton!
+    
     
     @IBOutlet var validateButton: UIButton!
     var recordingSession: AVAudioSession!
@@ -126,21 +127,37 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         print (countCoResult)
         print(countFaResult)
         
-        // create the alert
-        var result = String()
-        result = "عدد الإجابات الصحيحة  " + String(countCoResult) + "\n" + "عدد الإجابات الخاطئة  " + String(countFaResult)
+      func goToHomePage(alert: UIAlertAction){
+                print("go to home page")
+                
+               
+                let sampleStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+               
+                let homeView  = sampleStoryBoard.instantiateViewController(withIdentifier: "HomeViewController") as! BaseViewController
+                self.present(homeView, animated: true, completion: nil)
+                
+               
+            }
             
-        let alert = UIAlertController(title: "النتيجة", message: result, preferredStyle: UIAlertController.Style.alert)
-                   
-        // add an action (button)
-        
-        alert.addAction(UIAlertAction(title: "حسنًا", style: UIAlertAction.Style.default, handler: nil))
+            // create the alert
+            var result = String()
+            result = "عدد الإجابات الصحيحة  " + String(countCoResult) + "\n" + "عدد الإجابات الخاطئة  " + String(countFaResult)
+                
+            let alert = UIAlertController(title: "النتيجة", message: result, preferredStyle: UIAlertController.Style.alert)
+                       
+            // add an action (button)
+            
+            alert.addAction(UIAlertAction(title: "رجوع", style: UIAlertAction.Style.default, handler: nil))
+            
+            alert.addAction(UIAlertAction(title: "إنهاء التمرين", style: UIAlertAction.Style.default, handler: goToHomePage))
 
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
-        
-        
-    }
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            
+            
+        }
     
     
     
