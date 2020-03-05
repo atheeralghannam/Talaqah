@@ -358,7 +358,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hc-Ba-dMD">
                                                 <rect key="frame" x="0.0" y="0.0" width="386" height="30"/>
-                                                <color key="backgroundColor" red="0.99602228403091431" green="0.68306756019592285" blue="0.61213427782058716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.99607843137254903" green="0.68235294117647061" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="الملف الشخصي">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
@@ -2441,7 +2441,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UeN-ul-rpa"/>
-        <segue reference="Zow-ph-TWF"/>
+        <segue reference="WE8-wR-Ixk"/>
         <segue reference="QwH-ex-JFG"/>
         <segue reference="yEk-2w-QSD"/>
         <segue reference="Ycf-F4-Uyj"/>
