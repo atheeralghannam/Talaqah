@@ -255,6 +255,15 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
+        // MARK: Segue Method
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "patientDetail",
+                let indexPath = tableView?.indexPathForSelectedRow,
+                let destinationViewController: DetailViewController = segue.destination as? DetailViewController {
+                destinationViewController.patient = patientsArray[indexPath.row]
+            }
+        }
+
     
 }
 
