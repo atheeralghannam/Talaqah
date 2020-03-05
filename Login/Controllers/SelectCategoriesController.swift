@@ -80,5 +80,9 @@ class SelectCategoriesController: UIViewController {
             print(array)
             destnationVC.trials = array
         }
+        else if segue.identifier == "goToWords" {
+             let destnationVC = segue.destination as! SelsectWordsController
+            destnationVC.trials = trials
+        }
     }
 }

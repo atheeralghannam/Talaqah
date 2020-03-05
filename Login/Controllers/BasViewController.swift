@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 
 
-class BaseViewController: UIViewController {
+class BasViewController: UIViewController {
     
+    @IBOutlet weak var logout: UIButton!
     let db = Firestore.firestore()
     var trials = [Trial]()
     var categories = ["male","female", "adj", "animal", "body","personal", "family", "cloths", "food", "drinks", "vegetables", "fruits", "pots", "house", "furniture", "devices", "public", "transportation", "jobs", "shapes","colors"]
@@ -19,15 +20,8 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tal = UIColor(named: "Tala")
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
-        gradientLayer.colors = [tal!.cgColor, UIColor.white.cgColor]
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
-        print(trials.isEmpty)
-        if (trials.isEmpty){
         for document in documents{
         let docRef = db.collection("trials").document(document)
         for category in categories {
@@ -47,10 +41,9 @@ class BaseViewController: UIViewController {
                     }
                     
                     }
-                //print(self.trials)
+                print(self.trials)
                 }
             }
-        }
         }
         print(trials)
         // Do any additional setup after loading the view.
@@ -61,7 +54,7 @@ class BaseViewController: UIViewController {
             let destnationVC = segue.destination as! SelsectWordsController
             //destnationVC.categories = categories
 //            destnationVC.tri
-            destnationVC.trials = trials
+            destnationVC.trials = trials 
         }
     }
     
@@ -86,40 +79,44 @@ class BaseViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func logout(_ sender: UIButton) {
-        
-            
-            let refreshAlert = UIAlertController(title: "تسجيل الخروج", message: "هل أنت متأكد من أنك تريد تسجيل الخروج؟", preferredStyle: UIAlertController.Style.alert)
-            
-            refreshAlert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { (action: UIAlertAction!) in
-                let firebaseAuth = Auth.auth()
-                do {
-                    try firebaseAuth.signOut()
-                    print ("signing out DONE")
-                } catch let signOutError as NSError {
-                    print ("Error signing out: %@", signOutError)
-                }
-                
-                print("Handle Ok logic here")
-                UserDefaults.standard.set(false, forKey:Constants.isUserLoggedIn)
-                UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-                
-                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "startingScreen") as! UIViewController
-                
-                let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                
-                appDel.window?.rootViewController = loginVC
-                
-                
-            }))
-            
-            refreshAlert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { (action: UIAlertAction!) in
-                print("Handle Cancel Logic here")
-            }))
-            
-            present(refreshAlert, animated: true, completion: nil)
-    }
     
- 
+    @IBAction func signOut(_ sender: Any) {
+        
+        
+        
+        let refreshAlert = UIAlertController(title: "تسجيل الخروج", message: "هل أنت متأكد من أنك تريد تسجيل الخروج؟", preferredStyle: UIAlertController.Style.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { (action: UIAlertAction!) in
+            let firebaseAuth = Auth.auth()
+            do {
+                try firebaseAuth.signOut()
+                print ("signing out DONE")
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
+            
+            print("Handle Ok logic here")
+            UserDefaults.standard.set(false, forKey:Constants.isUserLoggedIn)
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+            
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "startingScreen") as! UIViewController
+            
+            let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            appDel.window?.rootViewController = loginVC
+            
+            
+        }))
+        
+        refreshAlert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Handle Cancel Logic here")
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
+        
+        
+        
+    }
+
 
 }

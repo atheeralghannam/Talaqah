@@ -64,7 +64,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     
     
     
-   
+    
     
     let storageRef = Storage.storage().reference()
     
@@ -72,7 +72,10 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     var playerAt = AVPlayer()
     
     //essintial function
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toHome"{
+        }
+    }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeLeft
     }
@@ -83,7 +86,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     override func viewDidLoad() {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
-
+        
         recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -114,7 +117,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     func loadRecordingUI() {
         playButton.isHidden = true
         validateButton.isHidden=true
-       
+        
         recordButton.isHidden = false
         recordButton.setTitle("", for: .normal)
     }
@@ -125,37 +128,37 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         print (countCoResult)
         print(countFaResult)
         
-      func goToHomePage(alert: UIAlertAction){
-                print("go to home page")
-                
-               
-                let sampleStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-               
-                let homeView  = sampleStoryBoard.instantiateViewController(withIdentifier: "HomeViewController") as! BaseViewController
-                self.present(homeView, animated: true, completion: nil)
-                
-               
-            }
-            
-            // create the alert
-            var result = String()
-            result = "عدد الإجابات الصحيحة  " + String(countCoResult) + "\n" + "عدد الإجابات الخاطئة  " + String(countFaResult)
-                
-            let alert = UIAlertController(title: "النتيجة", message: result, preferredStyle: UIAlertController.Style.alert)
-                       
-            // add an action (button)
-            
-            alert.addAction(UIAlertAction(title: "رجوع", style: UIAlertAction.Style.default, handler: nil))
-            
-            alert.addAction(UIAlertAction(title: "إنهاء التمرين", style: UIAlertAction.Style.default, handler: goToHomePage))
-
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
+        func goToHomePage(alert: UIAlertAction){
+            print("go to home page")
             
             
+            let sampleStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            
+            let homeView  = sampleStoryBoard.instantiateViewController(withIdentifier: "HomeViewController") as! BaseViewController
+            self.present(homeView, animated: true, completion: nil)
             
             
         }
+        
+        // create the alert
+        var result = String()
+        result = "عدد الإجابات الصحيحة  " + String(countCoResult) + "\n" + "عدد الإجابات الخاطئة  " + String(countFaResult)
+        
+        let alert = UIAlertController(title: "النتيجة", message: result, preferredStyle: UIAlertController.Style.alert)
+        
+        // add an action (button)
+        
+        alert.addAction(UIAlertAction(title: "رجوع", style: UIAlertAction.Style.default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "إنهاء التمرين", style: UIAlertAction.Style.default, handler: goToHomePage))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        
+        
+    }
     
     
     
@@ -302,7 +305,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             
             audioRecorder.record()
             
-          
+            
             recordButton.setTitle("", for: .normal)
             
         } catch {
@@ -336,7 +339,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             playButton.isHidden = false
             validateButton.isHidden=false
             
-
+            
             
         } else {
             recordButton.setTitle("Tap to Record", for: .normal)
@@ -376,9 +379,9 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     }
     
     
-   @objc func showCurrentTrial(){
+    @objc func showCurrentTrial(){
         //image
-    print(trials, count)
+        print(trials, count)
         writtenCue.text = ""
         let url = "images/"+trials[count].name+".jpg"
         let reference = storageRef.child(url)
@@ -432,7 +435,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     
     @IBAction func cuesPressed(_ sender: UIButton) {
         if sender.currentTitle == "المعنى" {
-           // let url = "audios/"+trials[count].audiosNames[0]+"mp3"
+            // let url = "audios/"+trials[count].audiosNames[0]+"mp3"
             let audPath = "audios/"+trials[count].audiosNames[0]+".mp3"
             let starsRef = storageRef.child(audPath)
             starsRef.downloadURL { url, error in
@@ -452,18 +455,18 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             writtenCue.text = text
         } else if sender.currentTitle == "الصوت الأول" {
             let audPath = "audios/"+trials[count].audiosNames[1]+".mp3"
-                       let starsRef = storageRef.child(audPath)
-                       starsRef.downloadURL { url, error in
-                           if error != nil {
-                               // Handle any errors
-                           } else {
-                               // Get the download URL for 'images/stars.jpg'
-                               let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
-                               self.playerAt = AVPlayer(playerItem: playerItem)
-                               self.playerAt.play()
-                           }
-                           
-                       }
+            let starsRef = storageRef.child(audPath)
+            starsRef.downloadURL { url, error in
+                if error != nil {
+                    // Handle any errors
+                } else {
+                    // Get the download URL for 'images/stars.jpg'
+                    let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
+                    self.playerAt = AVPlayer(playerItem: playerItem)
+                    self.playerAt.play()
+                }
+                
+            }
         } else if sender.currentTitle == "المقطع الأول"{
             let audPath = "audios/"+trials[count].audiosNames[2]+".mp3"
             let starsRef = storageRef.child(audPath)
@@ -477,7 +480,7 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
                     self.playerAt.play()
                 }
             }
-        
+            
         } else if sender.currentTitle == "الحرف الأول"{
             let text = trials[count].writtenCues[1]
             writtenCue.text = text
@@ -486,19 +489,19 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
             writtenCue.text = text
         } else if sender.currentTitle == "الكلمة منطوقة"{
             let audPath = "audios/"+trials[count].audiosNames[3]+".mp3"
-                       let starsRef = storageRef.child(audPath)
-                       starsRef.downloadURL { url, error in
-                           if error != nil {
-                               // Handle any errors
-                           } else {
-                               // Get the download URL for 'images/stars.jpg'
-                               let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
-                               self.playerAt = AVPlayer(playerItem: playerItem)
-                               self.playerAt.play()
-                           }
-                       }
+            let starsRef = storageRef.child(audPath)
+            starsRef.downloadURL { url, error in
+                if error != nil {
+                    // Handle any errors
+                } else {
+                    // Get the download URL for 'images/stars.jpg'
+                    let playerItem = AVPlayerItem(url: URL(string: url!.absoluteString)!)
+                    self.playerAt = AVPlayer(playerItem: playerItem)
+                    self.playerAt.play()
+                }
+            }
         }
-
+        
     }
     
     //Utility functions

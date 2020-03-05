@@ -52,6 +52,9 @@ class SelsectWordsController: UIViewController {
         }
     }
     
+    @IBAction func Home(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "Home", sender: self)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print(trials)
         if segue.identifier == "fromWordsToTrials" {
@@ -72,8 +75,12 @@ class SelsectWordsController: UIViewController {
                 destnationVC.trials = array
             }
         }
-        if segue.identifier == "fromWtoC"{
+        else if segue.identifier == "fromWtoC"{
             let destnationVC = segue.destination as! SelectCategoriesController
+            destnationVC.trials = trials
+        }
+        else if segue.identifier == "Home" {
+            let destnationVC = segue.destination as! BaseViewController
             destnationVC.trials = trials
         }
     }
