@@ -83,11 +83,6 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     override func viewDidLoad() {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
-//        let tal = UIColor(named: "Tala")
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = self.view.bounds
-//        gradientLayer.colors = [tal!.cgColor, UIColor.white.cgColor]
-//        self.view.layer.insertSublayer(gradientLayer, at: 0)
 
         recordingSession = AVAudioSession.sharedInstance()
         
@@ -107,6 +102,9 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         }
         if(count == 0){
             prevButton.isHidden = true
+        }
+        if trials.count == 1 {
+            nextButton.isHidden = true
         }
         writtenCue.text = ""
         showCurrentTrial()

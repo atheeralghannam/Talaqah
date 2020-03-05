@@ -61,7 +61,7 @@ class Utilities {
         // Filled rounded corner style
         button.backgroundColor = primaryColor
         button.heightAnchor.constraint(equalToConstant: 50.0).isActive = true
-        button.layer.cornerRadius = 25.0
+        button.layer.cornerRadius = 20.0
         button.tintColor = UIColor.white
     }
     
