@@ -44,10 +44,17 @@ class AccountViewController: UIViewController {
     //let PatientIfo: [Patient]
     
     //let patientInfo = [Patient].self
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+          return .portrait
+      }
+      override var shouldAutorotate: Bool {
+          return true
+      }
         
+        override func viewDidLoad() {
+    //        super.viewDidLoad()
+            let value = UIInterfaceOrientation.portrait.rawValue
+            UIDevice.current.setValue(value, forKey: "orientation")
 
         
 //        loadPatientInfo()
@@ -281,8 +288,8 @@ class AccountViewController: UIViewController {
            super.viewWillAppear(animated)
            
        }
-       
-       override open var shouldAutorotate: Bool {
-           return false
-       }
+//       
+//       override open var shouldAutorotate: Bool {
+//           return false
+//       }
 }

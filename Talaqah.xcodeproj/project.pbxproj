@@ -14,6 +14,7 @@
 		208F16892235F109002CF75F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F16882235F109002CF75F /* DesignableView.swift */; };
 		20B1568022480ADC00A70D9F /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B1567F22480ADC00A70D9F /* UIViewController+Extensions.swift */; };
 		377764E62411BB0C008D045B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377764E52411BB0C008D045B /* BaseViewController.swift */; };
+		377764E82411D462008D045B /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377764E72411D462008D045B /* HelpViewController.swift */; };
 		45B21C8D2403177900184DBC /* canYouNaming.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 45B21C8C2403177900184DBC /* canYouNaming.mp3 */; };
 		45D136B923F405A700ADEA97 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D136B823F405A700ADEA97 /* Utilities.swift */; };
 		45D136C323F428BC00ADEA97 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D136C223F428BC00ADEA97 /* RegisterController.swift */; };
@@ -56,6 +57,7 @@
 		208F16882235F109002CF75F /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		20B1567F22480ADC00A70D9F /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		377764E52411BB0C008D045B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		377764E72411D462008D045B /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		45B21C8C2403177900184DBC /* canYouNaming.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = canYouNaming.mp3; sourceTree = "<group>"; };
 		45D136B823F405A700ADEA97 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		45D136C223F428BC00ADEA97 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				F523F833240D247700B003CF /* slpLoginViewController.swift */,
 				F523F835240D314700B003CF /* BaseSLPViewController.swift */,
 				377764E52411BB0C008D045B /* BaseViewController.swift */,
+				377764E72411D462008D045B /* HelpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				208F16892235F109002CF75F /* DesignableView.swift in Sources */,
 				F518A57F23ED4C6E00A41AC8 /* SpeechController.swift in Sources */,
 				F50DC0732402ED1100604AAE /* SelsectWordsController.swift in Sources */,
+				377764E82411D462008D045B /* HelpViewController.swift in Sources */,
 				F523F834240D247700B003CF /* slpLoginViewController.swift in Sources */,
 				F50DC0772402ED5000604AAE /* TrialController.swift in Sources */,
 				F523F83C240D473700B003CF /* PatientsTableViewController.swift in Sources */,

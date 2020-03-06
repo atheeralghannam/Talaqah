@@ -66,6 +66,7 @@ class SelsectWordsController: UIViewController {
                     }
                 }
                 destnationVC.trials = array
+                destnationVC.modalPresentationStyle = .fullScreen
             } else{
                 for trial in trials{
                     if trial.category == "male" {
@@ -73,6 +74,7 @@ class SelsectWordsController: UIViewController {
                     }
                 }
                 destnationVC.trials = array
+                destnationVC.modalPresentationStyle = .fullScreen
             }
         }
         else if segue.identifier == "fromWtoC"{
@@ -82,6 +84,7 @@ class SelsectWordsController: UIViewController {
         else if segue.identifier == "Home" {
             let destnationVC = segue.destination as! BaseViewController
             destnationVC.trials = trials
+            destnationVC.modalPresentationStyle = .fullScreen
         }
     }
 }

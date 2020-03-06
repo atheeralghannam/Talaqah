@@ -16,16 +16,22 @@ class BaseViewController: UIViewController {
     var trials = [Trial]()
     var categories = ["male","female", "adj", "animal", "body","personal", "family", "cloths", "food", "drinks", "vegetables", "fruits", "pots", "house", "furniture", "devices", "public", "transportation", "jobs", "shapes","colors"]
     var documents = ["names", "verbs", "adjectives"]
-
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
+    }
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+//        super.viewDidLoad()
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
         let tal = UIColor(named: "Tala")
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
         gradientLayer.colors = [tal!.cgColor, UIColor.white.cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
         print(trials.isEmpty)
         if (trials.isEmpty){
         for document in documents{
@@ -59,12 +65,19 @@ class BaseViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startTrial" {
             let destnationVC = segue.destination as! SelsectWordsController
-            //destnationVC.categories = categories
-//            destnationVC.tri
             destnationVC.trials = trials
+            destnationVC.modalPresentationStyle = .fullScreen
+        }
+        else if segue.identifier == "ViewProfile" {
+            let destnationVC = segue.destination as! AccountViewController
+                    
+                       destnationVC.modalPresentationStyle = .fullScreen
         }
     }
     
+    @IBAction func Profile(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "ViewProfile", sender: self)
+    }
     @IBAction func Start(_ sender: UIButton) {
         if trials.isEmpty {
             let alertController = UIAlertController(title: "فضلًا انتظر", message:

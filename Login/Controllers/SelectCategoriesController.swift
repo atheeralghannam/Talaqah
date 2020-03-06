@@ -79,10 +79,12 @@ class SelectCategoriesController: UIViewController {
             }
             print(array)
             destnationVC.trials = array
+            destnationVC.modalPresentationStyle = .fullScreen
         }
         else if segue.identifier == "goToWords" {
              let destnationVC = segue.destination as! SelsectWordsController
             destnationVC.trials = trials
+            destnationVC.modalPresentationStyle = .fullScreen
         }
     }
 }

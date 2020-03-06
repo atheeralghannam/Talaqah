@@ -74,7 +74,14 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
     //essintial function
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toHome"{
+            let destnationVC = segue.destination as! BaseViewController
+            destnationVC.modalPresentationStyle = .fullScreen
         }
+        else if segue.identifier == "help"{
+            let destnationVC = segue.destination as! HelpViewController
+                       destnationVC.modalPresentationStyle = .fullScreen
+        }
+        
     }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeLeft
@@ -414,6 +421,9 @@ class TrialController: UIViewController,SFSpeechRecognizerDelegate {
         self.performSegue(withIdentifier: "toHome", sender: self)
     }
     
+    @IBAction func helpPage(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "help", sender: self)
+    }
     @IBAction func SkipPressed(_ sender: UIButton) {
         if(sender.currentTitle! == "Next"){
             prevButton.isHidden = false
