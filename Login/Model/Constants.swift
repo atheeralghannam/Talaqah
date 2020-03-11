@@ -16,6 +16,9 @@ struct Constants {
     static let correcAnswer = "correcAnswer"
     static let currentAnswer = "currentAnswer"
     static let isAnswerCorrect="isAnswerCorrect"
+    static let linkedSlpFname="linkedSlpFname"
+    static let linkedSlpLname="linkedSlpLname"
+
 
     
     

@@ -7,7 +7,8 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
     var patientsArray = [Patient]()
     var db: Firestore!
     var patientId = ""
-    
+    var slpUidd=""
+
     @IBOutlet weak var tableView: UITableView!
 
     @IBOutlet var addButton: UIButton!
@@ -28,7 +29,6 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
 
             var pEmail = String(), fName = String(), lName = String(), pGender = String(), pnID = String(), phoneNumber = String(), puid = String()
             let db = Firestore.firestore()
-//                var patients = [Patient]()
 
 
                             db.collection("patients").whereField("slpUid", isEqualTo:Auth.auth().currentUser!.uid).getDocuments { (snapshot, error) in
@@ -41,7 +41,6 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
 
                                             let data = document.data()
 
-                                            //self.pEmail = data["Email"] as? String ?? ""
                                             pEmail = data["Email"] as! String
                                             fName = data["FirstName"] as! String
                                             lName = data["LastName"] as! String
@@ -57,7 +56,6 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
                                         }
 
 
-//                                        print(self.scheduleIDarray)
 
                                         self.tableView.reloadData()
 
@@ -67,22 +65,7 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
                             }
         
         
-        
-        
-//
-//        db.collection("schedules").getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting documents: \(err)")
-//            } else {
-//                for document in querySnapshot!.documents {
-//
-//                    self.scheduleIDarray.append(document.documentID)
-//                }
-//            }
-//            print(self.scheduleIDarray)
-//
-//            self.tableView.reloadData()
-//        }
+
 
     }
 
@@ -154,37 +137,24 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
                       print("Handle Ok logic here")
                       }))
 
-//                    refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-//                      print("Handle Cancel Logic here")
-//                      }))
-
                     self.present(refreshAlert, animated: true, completion: nil)
 //
-//                self.showToast(message: "رقم الهوية/الإقامة غير صالح", font: UIFont(name: "Times New Roman", size: 12.0)!)
                 }
-//
-//                if(){
-//                    return
-//                }
-                var foundAddedBefore=false
+
                 
                 for element in self.patientsArray {
                     if refreshAlert?.textFields![0].text?.trimmingCharacters(in: .whitespacesAndNewlines) == element.NID{
                         
                         
                         
-                                          var refreshAlert = UIAlertController(title: "", message: "هذا المريض مضاف سابقًا بالفعل", preferredStyle: UIAlertController.Style.alert)
+                                          var refreshAlert = UIAlertController(title: "", message: "هذا المريض مضاف لديك مسبقًا", preferredStyle: UIAlertController.Style.alert)
 
                                             refreshAlert.addAction(UIAlertAction(title: "حسنًا", style: .default, handler: { (action: UIAlertAction!) in
                                               print("Handle Ok logic here")
                                               }))
 
-                        //                    refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-                        //                      print("Handle Cancel Logic here")
-                        //                      }))
 
                                             self.present(refreshAlert, animated: true, completion: nil)
-//                    self.showToast(message: "هذا المريض مضاف سابقًا بالفعل", font: UIFont(name: "Times New Roman", size: 12.0)!)
                         return
 
                     }
@@ -197,11 +167,29 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
                                 .getDocuments() { (querySnapshot, error) in
                                     if let error = error {
                                             print(error.localizedDescription)
+
                                     } else if querySnapshot!.documents.count != 1 {
-                                            print("More than one documents or none")
+                                        var refreshAlert = UIAlertController(title: "", message: "عذرًا، لا يوجد مريض بهذا الرقم", preferredStyle: UIAlertController.Style.alert)
+
+                                                                                       refreshAlert.addAction(UIAlertAction(title: "حسنًا", style: .default, handler: { (action: UIAlertAction!) in
+                                                                                         print("Handle Ok logic here")
+                                                                                         }))
+
+
+                                                                                       self.present(refreshAlert, animated: true, completion: nil)
+                                            print("More than one documents or NONE")
                                     } else {
                                         
+                                        
+                                        for document in querySnapshot!.documents {
+                                                       
+                                                       let data = document.data()
+                                                       
+                                            self.slpUidd = data["slpUid"] as! String
+                                                   }
+                                        
                                     
+                                        if(self.slpUidd==""){
                                         let document = querySnapshot!.documents.first
                                         document!.reference.updateData([
                                           "slpUid": Auth.auth().currentUser!.uid
@@ -224,9 +212,83 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
                                                             self.present(refreshAlert, animated: true, completion: nil)
                                         
                                         
-//                                        self.showToast(message: "تمت الإضافة بنجاح", font: UIFont(name: "Times New Roman", size: 12.0)!)
                                              print("empty id")
 
+                                        }
+                                            //linked to another slp
+                                        else{
+                                            
+                                            
+                                            Firestore.firestore().collection("slps").whereField("uid", isEqualTo:self.slpUidd).getDocuments { (snapshot, error) in
+                                                                            if let error = error {
+                                                                                print(error.localizedDescription)
+                                                                            } else {
+                                                                                if let snapshot = snapshot {
+
+                                                                                    for document in snapshot.documents {
+// patientSLP
+                                                                                        let data = document.data()
+                                                                                        
+                                                                                        
+                                                                                        UserDefaults.standard.set(data["fname"] as! String, forKey: Constants.linkedSlpFname)
+                                                                                                
+                                                                                        UserDefaults.standard.set(data["lname"] as! String, forKey: Constants.linkedSlpLname)
+                                                                                            
+                                                                                        print("NEEEDDDD!!!")
+                                                                                                                                   
+
+                                                                                    }
+                                                                                    
+                                                                                    
+                                                                                      let refreshAlert = UIAlertController(title: "إضافة مريض", message:  "هذا المريض مضاف بالفعل للأخصائي" + " "
+                                                                                        + UserDefaults.standard.string(forKey: Constants.linkedSlpFname)! + " " + UserDefaults.standard.string(forKey: Constants.linkedSlpLname)! + " " + "هل تود إضافته بالفعل؟"  , preferredStyle: UIAlertController.Style.alert)
+                                                                                      
+                                                                                      refreshAlert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { (action: UIAlertAction!) in
+                                                                                    
+                                                                                          
+                                                                                          print("Handle Ok logic here")
+                                                                                                                                  let document = querySnapshot!.documents.first
+                                                                                                                                  document!.reference.updateData([
+                                                                                                                                    "slpUid": Auth.auth().currentUser!.uid
+                                                                                                                                  ])
+                                                                                                                                  self.patientsArray.removeAll()
+                                                                                                                                  self.loadData()
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                                    var refreshAlert = UIAlertController(title: "تمت الإضافة بنجاح", message: "", preferredStyle: UIAlertController.Style.alert)
+
+                                                                                                                                                      refreshAlert.addAction(UIAlertAction(title: "حسنًا", style: .default, handler: { (action: UIAlertAction!) in
+                                                                                                                                                        print("Handle Ok logic here")
+                                                                                                                                                        }))
+
+                                                                                                                  
+
+                                                                                                                                                      self.present(refreshAlert, animated: true, completion: nil)
+                                                                          
+                                                                                          
+                                                                                      }))
+                                                                                      
+                                                                                      refreshAlert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { (action: UIAlertAction!) in
+                                                                                          print("Handle Cancel Logic here")
+                                                                                      }))
+                                                                                      
+                                                                                      self.present(refreshAlert, animated: true, completion: nil)
+
+
+
+                                                                                }
+                                                                            }
+                                                                        }
+                                             
+                                            
+                                            print("linked to another slp")
+                                    
+                                            
+                                        }
+                                        
+                                        
                                     }}
 
             } else {
@@ -241,7 +303,6 @@ class PatientsTableViewController: UIViewController, UITableViewDelegate, UITabl
 
                                                     self.present(refreshAlert, animated: true, completion: nil)
                 
-//                self.showToast(message: "لم تقم بإدخال أية رقم", font: UIFont(name: "Times New Roman", size: 12.0)!)
                 print("empty id")
             }
             
