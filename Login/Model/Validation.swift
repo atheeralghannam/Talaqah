@@ -71,7 +71,7 @@ class Validation {
 //               let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneNumberRegex)
 //               let isValidPhone = phoneTest.evaluate(with: self)
 //               return isValidPhone
-    if phoneNumber.prefix(2)=="05"
+    if phoneNumber.prefix(2)=="05" && phoneNumber.count == 10
     {
         return true
     }else {

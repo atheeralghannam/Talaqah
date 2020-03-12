@@ -2225,6 +2225,9 @@
                                                 <state key="normal" title="الملف الشخصي">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="uPa-rp-TFJ" kind="show" id="7hv-0c-aIB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VI-1u-uZf">
                                                 <rect key="frame" x="0.0" y="49" width="386" height="30"/>
@@ -2629,6 +2632,136 @@
             </objects>
             <point key="canvasLocation" x="2274" y="370"/>
         </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="xGg-3G-d0d">
+            <objects>
+                <viewController id="uPa-rp-TFJ" customClass="SLPEditProfileViewController" customModule="Talaqah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hB4-r2-2Wx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="lsA-kX-TSL">
+                                <rect key="frame" x="0.0" y="27" width="414" height="788"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <userGuides>
+                                    <userLayoutGuide location="15" affinity="minX"/>
+                                    <userLayoutGuide location="398" affinity="minX"/>
+                                </userGuides>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H0l-if-LJG">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="781"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="5Hw-bp-iX5">
+                                                <rect key="frame" x="0.0" y="8" width="414" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="8af-AW-4r5"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="Srq-fU-dZh">
+                                                <rect key="frame" x="0.0" y="144" width="414" height="608"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الإلكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiQ-qr-SDF">
+                                                        <rect key="frame" x="53" y="72" width="312" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رقم الجوال" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p07-BQ-QNM">
+                                                        <rect key="frame" x="53" y="122" width="312" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم الأول" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9f-ii-JBN">
+                                                        <rect key="frame" x="53" y="177" width="312" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="اسم العائلة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gg1-Bc-x3R">
+                                                        <rect key="frame" x="53" y="235" width="312" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejI-12-Fof">
+                                                        <rect key="frame" x="16" y="327" width="382" height="50"/>
+                                                        <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Nt4-sC-s6G"/>
+                                                        </constraints>
+                                                        <state key="normal" title=" حفظ التغييرات ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <integer key="value" value="25"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="saveTapped:" destination="uPa-rp-TFJ" eventType="touchUpInside" id="ZlX-cs-qfa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="هناك خطأ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evn-uo-214">
+                                                        <rect key="frame" x="-32" y="294" width="414" height="20.5"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="ejI-12-Fof" secondAttribute="bottom" constant="231" id="AfX-L8-XQx"/>
+                                                    <constraint firstItem="ejI-12-Fof" firstAttribute="leading" secondItem="Srq-fU-dZh" secondAttribute="leading" constant="16" id="Qka-rl-cuT"/>
+                                                    <constraint firstItem="ejI-12-Fof" firstAttribute="centerX" secondItem="Srq-fU-dZh" secondAttribute="centerX" id="SbE-3S-yGE"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nug-nA-8by">
+                                                <rect key="frame" x="0.0" y="760" width="414" height="13"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ACc-R0-k6L">
+                                                        <rect key="frame" x="168" y="0.0" width="78" height="13"/>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ACc-R0-k6L" firstAttribute="leading" secondItem="Nug-nA-8by" secondAttribute="leading" constant="168" id="Hcm-h5-FLl"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Nug-nA-8by" firstAttribute="top" secondItem="H0l-if-LJG" secondAttribute="top" constant="760" id="xeZ-fh-ME0"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="EKB-1f-bHM" firstAttribute="trailing" secondItem="H0l-if-LJG" secondAttribute="trailing" id="2yD-wC-O25"/>
+                                    <constraint firstItem="H0l-if-LJG" firstAttribute="top" secondItem="EKB-1f-bHM" secondAttribute="top" id="GOq-Wl-iLf"/>
+                                    <constraint firstItem="H0l-if-LJG" firstAttribute="leading" secondItem="EKB-1f-bHM" secondAttribute="leading" id="m7j-Jr-kwU"/>
+                                    <constraint firstItem="EKB-1f-bHM" firstAttribute="bottom" secondItem="H0l-if-LJG" secondAttribute="bottom" id="x53-rU-VG9"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="EKB-1f-bHM"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bWA-Sn-Ehp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nlp-ZU-ENp"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="Evn-uo-214" id="3zS-UQ-knd"/>
+                        <outlet property="saveButton" destination="ejI-12-Fof" id="ugo-gC-tOm"/>
+                        <outlet property="slpEmail" destination="eiQ-qr-SDF" id="FIo-8G-SCF"/>
+                        <outlet property="slpLname" destination="Gg1-Bc-x3R" id="Ga8-ai-OEH"/>
+                        <outlet property="slpPhone" destination="p07-BQ-QNM" id="lJB-Ud-Phf"/>
+                        <outlet property="slpfname" destination="h9f-ii-JBN" id="gPh-4i-YTj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3D-Q6-iEc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1675" y="3173"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Close button" width="28" height="28"/>
@@ -2641,8 +2774,8 @@
         <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="custom – 1" width="2571" height="1176"/>
         <image name="disclousre" width="552" height="981"/>
-        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="gear" width="512" height="512"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="logout (1)" width="512" height="512"/>
         <image name="mic.fill" catalog="system" width="54" height="64"/>
@@ -2659,7 +2792,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cgx-NJ-f0h"/>
+        <segue reference="bib-T8-qDc"/>
         <segue reference="I9P-vx-bdA"/>
         <segue reference="y0e-Pc-RST"/>
         <segue reference="8a4-0V-Erh"/>

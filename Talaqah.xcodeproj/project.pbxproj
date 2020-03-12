@@ -43,6 +43,7 @@
 		F5B7BF1023EB43E70033B094 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7BF0F23EB43E70033B094 /* Validation.swift */; };
 		F5C8DBE223FE93D60098D790 /* TestTrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C8DBE123FE93D60098D790 /* TestTrialViewController.swift */; };
 		F5DCFFEC23E5A453005B2D38 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5DCFFEB23E5A453005B2D38 /* GoogleService-Info.plist */; };
+		F5E1735F241A52DB00DA5967 /* SLPEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E1735E241A52DB00DA5967 /* SLPEditProfileViewController.swift */; };
 		F5FC8AB723F6AF9500BC8F63 /* validateSAID.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FC8AB623F6AF9500BC8F63 /* validateSAID.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		F5B7BF0F23EB43E70033B094 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		F5C8DBE123FE93D60098D790 /* TestTrialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTrialViewController.swift; sourceTree = "<group>"; };
 		F5DCFFEB23E5A453005B2D38 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F5E1735E241A52DB00DA5967 /* SLPEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPEditProfileViewController.swift; sourceTree = "<group>"; };
 		F5FC8AB623F6AF9500BC8F63 /* validateSAID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validateSAID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				F523F835240D314700B003CF /* BaseSLPViewController.swift */,
 				377764E52411BB0C008D045B /* BaseViewController.swift */,
 				377764E72411D462008D045B /* HelpViewController.swift */,
+				F5E1735E241A52DB00DA5967 /* SLPEditProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				20B1568022480ADC00A70D9F /* UIViewController+Extensions.swift in Sources */,
 				F58FE98C23F9529100460DB6 /* editprofileViewController.swift in Sources */,
 				45E32E8E24004F4000F2E4F0 /* ResetPasswordViewController.swift in Sources */,
+				F5E1735F241A52DB00DA5967 /* SLPEditProfileViewController.swift in Sources */,
 				45D136B923F405A700ADEA97 /* Utilities.swift in Sources */,
 				208F16792235EAAB002CF75F /* LoginViewController.swift in Sources */,
 				88CB23A6240405E40099A3C2 /* ResultController.swift in Sources */,
