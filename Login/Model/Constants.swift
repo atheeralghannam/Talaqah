@@ -18,6 +18,8 @@ struct Constants {
     static let isAnswerCorrect="isAnswerCorrect"
     static let linkedSlpFname="linkedSlpFname"
     static let linkedSlpLname="linkedSlpLname"
+    static let isNewEmail="isNewEmail"
+
 
 
     

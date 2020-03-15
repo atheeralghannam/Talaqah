@@ -29,7 +29,7 @@ class SLPEditProfileViewController: UIViewController, UITableViewDelegate, UITex
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         SetUpElements()
 
         // Do any additional setup after loading the view.
@@ -66,6 +66,9 @@ class SLPEditProfileViewController: UIViewController, UITableViewDelegate, UITex
     
         func validateFields() -> String? {
             
+//            UserDefaults.standard.set(true,forKey: Constants.isNewEmail)
+
+            
             // Get text input from TextField
     
             
@@ -79,9 +82,71 @@ class SLPEditProfileViewController: UIViewController, UITableViewDelegate, UITex
                 return "الرجاء التحقق من تعبئة جميع الحقول"
             }
             
+//            
+//       
+//            Firestore.firestore().collection("slps").whereField("email", isEqualTo:slpEmail.text!).getDocuments { (snapshot, error) in
+//                                                                                        if let error = error {
+//                                                                                            print(error.localizedDescription)
+//                                                                                        } else {
+//                                                                                            if let snapshot = snapshot {
+//
+//                                                                                                for document in snapshot.documents {
+//            // patientSLP
+//                            let data = document.data()
+//                                                                                                    
+//                                                                                                
+//                    if(data ["uid"] as! String == Auth.auth().currentUser!.uid){
+//                        UserDefaults.standard.set(true,forKey: Constants.isNewEmail)
+//
+//                                                                                                   
+//                        print("yaaaas")
+//                        
+//                    }
+//                    else{
+//                        UserDefaults.standard.set(false,forKey: Constants.isNewEmail)
+//                                                   }
+//                                                                                                    
+//                                                                                                }
+//                                                                                            }
+//                }
+//            }
+//            
+//            
+//            Firestore.firestore().collection("patients").whereField("Email", isEqualTo:slpEmail.text!).getDocuments { (snapshot, error) in
+//                                                                                        if let error = error {
+//                                                                                            print(error.localizedDescription)
+//                                                                                        } else {
+//                                                                                            
+//                                                                                            
+//                                                                       if let snapshot = snapshot {
+//
+//                                                                                                                            for document in snapshot.documents {
+//                                                                                            // patientSLP
+//                                                                                                            let data = document.data()
+//                                                                                                                                                                                    
+//                                                                                                                                                                                
+//                                                                                                                                if(data ["Email"] as? String == self.slpEmail.text ){
+//                                                                                                                                                                                   UserDefaults.standard.set(false,forKey: Constants.isNewEmail)
+//
+//                                                                                                        print("yaaaas")
+//                                                                                                        
+//                                                                                                    }
+//                                                                                                                                else{
+//                                                                                                                                    UserDefaults.standard.set(true,forKey: Constants.isNewEmail)
+//
+//                                                                                                                                }
+//                                                                                                 
+//                                                                                                                                                                                    
+//                                                                        }
+//                                                                                                                                                                            }
+////                                                                                            self.isNewEmail=false
+//                                                                                            
+//                                                                                            }
+//            }
+//            
+         
             
-            
-            // Check if the password is secure
+//             isNewEmail=
 
             let isValidPhone=self.validation.isValidPhoneNumber(phoneNumber: slpPhone.text!) 
             
@@ -94,9 +159,18 @@ class SLPEditProfileViewController: UIViewController, UITableViewDelegate, UITex
             }
             
                     if isValidEmail==false {
-                        return "الرجاء التحقق من إدخال إيميل صحيح"
+                        return "الرجاء التحقق من إدخال بريد إلكتروني صحيح"
             //            return "Please enter valid phone: 05********"
                     }
+            
+//            print("??????")
+//                           print(UserDefaults.standard.bool(forKey: Constants.isNewEmail))
+//            if UserDefaults.standard.bool(forKey: Constants.isNewEmail)==false {
+//                print("!!!!!!!!")
+//                print("falsw")
+//                                  return "هذا البريد الإلكتروني مستخدم من شخص آخر"
+//                      //            return "Please enter valid phone: 05********"
+//                              }
             
             
             let isValidName=self.validation.validateName(name: slpfname.text!) &&  self.validation.validateName(name: slpLname.text!)

@@ -11,49 +11,81 @@ import UIKit
 import Firebase
 
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
 
 var patient: Patient?
     let db = Firestore.firestore()
 
 
-    @IBOutlet var imageViw: UIImageView!
-    
-    @IBOutlet var firstname: UILabel!
-    
-    
-    @IBOutlet var patId: UILabel!
+
     
     
     @IBOutlet var remove: UIButton!
     
-    @IBOutlet var phoneNum: UILabel!
+
     
-    @IBOutlet var gender: UILabel!
-    @IBOutlet var emailPatientLabel: UILabel!
+
+    
+    
+    @IBOutlet var patientFullName: UITextField!
+    
+    @IBOutlet var patientID: UITextField!
+    @IBOutlet var patientEmail: UITextField!
+    @IBOutlet var patientPhone: UITextField!
+    @IBOutlet var patientGender: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SetUpElements()
+
         if let patient = patient {
             navigationItem.title = patient.FirstName
 //            imageView.image = UIImage(named: recipe.thumbnails)
             
 //            let name = patient.FirstName + " " + patient.LastName
-
-            firstname.text = patient.FirstName + " " + patient.LastName
+                        
+            patientFullName.text = patient.FirstName + " " + patient.LastName
             
-            patId.text = "رقم المريض:" + patient.NID
+            patientID.text =  patient.NID
             
-            phoneNum.text = "رقم الجوال:" + patient.PhoneNumber
+            patientPhone.text =  patient.PhoneNumber
             
-            gender.text = "الجنس:" + patient.Gender
+            patientGender.text =  patient.Gender
             
-            emailPatientLabel.text = "البريد الإلكتروني:" + patient.Email
+            patientEmail.text = patient.Email
        
         
         
         
         }
+        
+        patientFullName.delegate = self
+        patientID.delegate = self
+        patientPhone.delegate = self
+        patientGender.delegate = self
+        patientEmail.delegate = self
+
+        
+    }
+    func SetUpElements() {
+        
+        // Hide the error label
+        
+        // Style the elements
+        Utilities.styleTextField(textfield: patientFullName)
+        Utilities.styleTextField(textfield: patientID)
+        Utilities.styleTextField(textfield: patientPhone)
+        Utilities.styleTextField(textfield: patientEmail)
+        Utilities.styleTextField(textfield: patientGender)
+
+
+        patientPhone.smartInsertDeleteType = UITextSmartInsertDeleteType.no
+        patientPhone.delegate = self
+        
+        
+        //todo set up genderSegmented Style
+        
     }
     
     @IBAction func removePatientTapped(_ sender: Any) {
