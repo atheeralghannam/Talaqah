@@ -34,7 +34,9 @@ class AccountViewController: UIViewController {
     
     @IBOutlet var sendProgress: UIButton!
     
+    @IBOutlet var viewProgress: UIButton!
     
+
    
     
     @IBOutlet var patientEmail: UILabel!
@@ -56,81 +58,25 @@ class AccountViewController: UIViewController {
             let value = UIInterfaceOrientation.portrait.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
 
-        
-//        loadPatientInfo()
+            Utilities.styleSecondaryButton(button: viewProgress)
+
         loadData()
-        //print(self.newPatient)
-        
-//        let db = Firestore.firestore()
-//                      
-//                      
-//                      
-//                      db.collection("patients")
-//                      .whereField("uid", isEqualTo :Auth.auth().currentUser!.uid)
-//                      .getDocuments() { (querySnapshot, err) in
-//                          if let err = err {
-//                                  print(err.localizedDescription)
-//                          } else if querySnapshot!.documents.count != 1 {
-//                                  print("More than one documents or none")
-//                          } else {
-//                              let document = querySnapshot!.documents.first
-//                              document?.reference.updateData([
-//                                "Email":"",
-//                                "FirstName": "",
-//                                "Gender": "",
-//                                "LastName": "",
-//                                "PhoneNumber": ""
-//                                // uid and nid must not be chnged
-//                              ])
-//                          }
-//                      }
-              
-        //getForCategory(category: "اسم")
-        //getForExType(exType : "اسم")
-        //cues()
-        
+       
     }
     
     @IBAction func backToHomePage(_ sender: Any) {
         
     }
     
-    @IBAction func sendProgressPressed(_ sender: UIButton) {
-//        if MFMailComposeViewController.canSendMail() {
-//                let mail = MFMailComposeViewController()
-//                mail.mailComposeDelegate = self
-//                mail.setToRecipients(["you@yoursite.com"])
-//                mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
-//
-//                present(mail, animated: true)
-//            } else {
-//                // show failure alert
-//            }
-//        }
-//
-//        func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-//            controller.dismiss(animated: true)
+    
+    @IBAction func viewProgressPressed(_ sender: UIViewController) {
+        
     }
     
     
+    
     func loadPatientInfo(){
-        
-        
-        
-        /*let docRef = db.collection("patients").document(Auth.auth().currentUser!.uid)
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists{
-                let dataDescription = document.data()?.map(String.init(describing:)) ?? ["nil"]
-                print("Document data: \(dataDescription)")
-            } else{
-                print ("Document dose not exist")
-            }
-            
-        }*/
-        
-        
-        
-//        let docRef = db.collection("patients").whereField("uid", isEqualTo: Auth.auth().currentUser?.uid ?? "")
+
         let docRef = db.collection("patients").whereField("uid", isEqualTo:Auth.auth().currentUser!.uid)
 
         docRef.getDocuments { (querySnapshot, error) in
@@ -146,15 +92,7 @@ class AccountViewController: UIViewController {
                 guard let firstname = dataDescription?["FirstName"] else { return }
                 print(firstname)
             }
-            
-            
-            
-            
-           
-            
         }
-        //TODO present the information without check the current user
- 
     }
     
     func loadData() {

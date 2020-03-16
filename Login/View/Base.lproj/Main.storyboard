@@ -349,16 +349,16 @@
                                 <rect key="frame" x="-0.5" y="44" width="415" height="682"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="CsH-ru-1Mg">
-                                        <rect key="frame" x="0.0" y="0.0" width="415" height="134"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="415" height="111"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     الاسم:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnW-ef-cyL">
-                                                <rect key="frame" x="351.5" y="0.0" width="63.5" height="66.5"/>
+                                                <rect key="frame" x="351.5" y="0.0" width="63.5" height="55"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoM-MH-gBK">
-                                                <rect key="frame" x="0.0" y="67.5" width="415" height="66.5"/>
+                                                <rect key="frame" x="0.0" y="56" width="415" height="55"/>
                                                 <color key="backgroundColor" name="Tala"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
@@ -367,16 +367,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="dnV-1k-Wea">
-                                        <rect key="frame" x="0.0" y="137" width="415" height="134"/>
+                                        <rect key="frame" x="0.0" y="114" width="415" height="111.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     الجنس:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjq-ZN-bQU">
-                                                <rect key="frame" x="342.5" y="0.0" width="72.5" height="66.5"/>
+                                                <rect key="frame" x="342.5" y="0.0" width="72.5" height="55.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZQ-V2-Iqi">
-                                                <rect key="frame" x="0.0" y="67.5" width="415" height="66.5"/>
+                                                <rect key="frame" x="0.0" y="56.5" width="415" height="55"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
@@ -385,16 +385,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="aS4-Yv-Vl3">
-                                        <rect key="frame" x="0.0" y="274" width="415" height="134"/>
+                                        <rect key="frame" x="0.0" y="228.5" width="415" height="111"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     رقم الهوية\الإقامة:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pe-hE-oGr">
-                                                <rect key="frame" x="273" y="0.0" width="142" height="67"/>
+                                                <rect key="frame" x="273" y="0.0" width="142" height="55.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R04-CZ-IrD">
-                                                <rect key="frame" x="0.0" y="67" width="415" height="67"/>
+                                                <rect key="frame" x="0.0" y="55.5" width="415" height="55.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
@@ -403,16 +403,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="qiB-Ri-rk2">
-                                        <rect key="frame" x="0.0" y="411" width="415" height="134"/>
+                                        <rect key="frame" x="0.0" y="342.5" width="415" height="111"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     رقم الجوال:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNl-2O-BuQ">
-                                                <rect key="frame" x="316" y="0.0" width="99" height="66.5"/>
+                                                <rect key="frame" x="316" y="0.0" width="99" height="55"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-DL-zBI">
-                                                <rect key="frame" x="0.0" y="67.5" width="415" height="66.5"/>
+                                                <rect key="frame" x="0.0" y="56" width="415" height="55"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
@@ -421,21 +421,34 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-4r-qJd">
-                                        <rect key="frame" x="0.0" y="548" width="415" height="134"/>
+                                        <rect key="frame" x="0.0" y="456.5" width="415" height="111.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     البريد الإلكتروني:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXN-lS-7w4">
-                                                <rect key="frame" x="280.5" y="0.0" width="134.5" height="66.5"/>
+                                                <rect key="frame" x="280.5" y="0.0" width="134.5" height="55.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kg0-aU-Yta">
-                                                <rect key="frame" x="0.0" y="67.5" width="415" height="66.5"/>
+                                                <rect key="frame" x="0.0" y="56.5" width="415" height="55"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rwa-Ru-KZi">
+                                        <rect key="frame" x="136" y="571" width="143" height="111"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLw-xP-NTo">
+                                                <rect key="frame" x="0.0" y="0.0" width="143" height="111"/>
+                                                <state key="normal" title="عرض تقدم حالة المريض"/>
+                                                <connections>
+                                                    <action selector="viewProgressPressed:" destination="UiZ-8Y-TrN" eventType="touchUpInside" id="dmL-Fg-oYg"/>
+                                                    <segue destination="2Ia-YX-tGl" kind="show" id="kJ2-s0-fbb"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -452,6 +465,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="arrowshape.turn.up.right.circle" catalog="system" id="zyA-tl-g0u">
                                             <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="6Mb-i4-cFF" kind="show" id="Xr1-NH-bRw"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -470,12 +486,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6bf-lg-d66"/>
                     </view>
+                    <navigationItem key="navigationItem" id="JLB-QF-e08"/>
                     <connections>
                         <outlet property="nID" destination="R04-CZ-IrD" id="05K-8p-vl4"/>
                         <outlet property="patientEmail" destination="Kg0-aU-Yta" id="iTn-pu-Y2U"/>
                         <outlet property="patientGender" destination="TZQ-V2-Iqi" id="9U0-Xa-Fgo"/>
                         <outlet property="patientName" destination="VoM-MH-gBK" id="egC-N2-zBc"/>
                         <outlet property="patientPhone" destination="bCr-DL-zBI" id="uq1-Ph-QCz"/>
+                        <outlet property="viewProgress" destination="cLw-xP-NTo" id="rqe-7m-9l3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmN-Wf-37i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1039,11 +1057,11 @@
                                                 </button>
                                             </barButtonItem>
                                             <barButtonItem style="plain" id="Z3E-dF-IOp">
-                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XeE-Xb-7Cr">
-                                                    <rect key="frame" x="734.5" y="11" width="89" height="34"/>
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XeE-Xb-7Cr">
+                                                    <rect key="frame" x="731.5" y="11" width="92" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" title="إنهاء التمرين">
+                                                    <state key="normal" title="عرض النتيجة">
                                                         <color key="titleColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -1943,6 +1961,51 @@
             </objects>
             <point key="canvasLocation" x="1425" y="1521.7391304347827"/>
         </scene>
+        <!--Progress View Controller-->
+        <scene sceneID="WhF-qe-6dP">
+            <objects>
+                <viewController id="2Ia-YX-tGl" customClass="ProgressViewController" customModule="Talaqah" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PMq-RN-aCc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z6C-B4-qMV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="حالة التقدم" id="lBb-qL-qRJ">
+                                        <barButtonItem key="leftBarButtonItem" title="إرسال" id="LgS-fp-iaD">
+                                            <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="sendEmailPressed:" destination="2Ia-YX-tGl" id="cuf-rG-1Y3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="arrowshape.turn.up.right.circle" catalog="system" id="rQh-IQ-Tp8">
+                                            <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="UiZ-8Y-TrN" kind="show" id="yRV-OG-CkV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MlT-3C-5PI">
+                                <rect key="frame" x="152" y="321" width="75" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GBf-95-Zre"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="esG-2z-yk2"/>
+                    <connections>
+                        <outlet property="sendEmail" destination="LgS-fp-iaD" id="HZt-GL-beX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VOe-Hs-B3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2272" y="1121"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="cbt-af-4p4">
             <objects>
@@ -2789,10 +2852,12 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bib-T8-qDc"/>
+        <segue reference="kJ2-s0-fbb"/>
+        <segue reference="cgx-NJ-f0h"/>
         <segue reference="O3L-zy-Hiu"/>
         <segue reference="y0e-Pc-RST"/>
         <segue reference="8a4-0V-Erh"/>
+        <segue reference="yRV-OG-CkV"/>
         <segue reference="yEk-2w-QSD"/>
         <segue reference="G5z-Ln-Bva"/>
     </inferredMetricsTieBreakers>

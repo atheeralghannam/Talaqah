@@ -47,7 +47,7 @@ class BaseViewController: UIViewController {
                         if !data.isEmpty{
                         self.trials.append(Trial(answer: data["answer"] as! String , name: data["name"] as! String
                             , writtenCues: data["writtenCues"] as! Array<String>, audiosNames: data["audiosNames"] as!
-                                Array<String>, settings: data["settings"] as! Array<String>, category: category))
+                                Array<String>, settings: data["settings"] as! Array<Int>, category: category))
                         }
                        // print("\(document.documentID) => \(document.data())")
                     }
