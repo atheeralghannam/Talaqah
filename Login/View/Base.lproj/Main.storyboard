@@ -218,7 +218,7 @@
             <objects>
                 <viewController id="oxT-Zz-XbA" customClass="ResetPasswordViewController" customModule="Talaqah" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U4W-lM-Ih9">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
                             <userLayoutGuide location="16" affinity="minX"/>
@@ -226,10 +226,10 @@
                         </userGuides>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="whh-LT-JsT">
-                                <rect key="frame" x="44" y="0.0" width="808" height="393"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="wF6-Nq-cEw">
-                                        <rect key="frame" x="16" y="8" width="776" height="28"/>
+                                        <rect key="frame" x="16" y="8" width="382" height="28"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlz-gt-F2F">
                                                 <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
@@ -241,13 +241,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="TIh-TL-seq">
-                                        <rect key="frame" x="16" y="66" width="776" height="107.5"/>
+                                        <rect key="frame" x="16" y="66" width="382" height="107.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0G0-YE-bQO">
-                                                <rect key="frame" x="0.0" y="0.0" width="776" height="33.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="33.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نسيت كلمة المرور؟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsW-EG-CTp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="776" height="33.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="33.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -255,10 +255,10 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0UL-6g-Lqx" customClass="DesignableView" customModule="Talaqah" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="57.5" width="776" height="50"/>
+                                                <rect key="frame" x="0.0" y="57.5" width="382" height="50"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الإلكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XDC-tC-ZHy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="776" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="4Ku-3Q-O95"/>
                                                         </constraints>
@@ -291,7 +291,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srj-Kr-i34">
-                                        <rect key="frame" x="16" y="203.5" width="776" height="50"/>
+                                        <rect key="frame" x="16" y="203.5" width="382" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.60784313729999995" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1ip-DW-6r9"/>
@@ -309,7 +309,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="7dG-0c-h6k">
-                                        <rect key="frame" x="16" y="283.5" width="776" height="101.5"/>
+                                        <rect key="frame" x="16" y="283.5" width="382" height="516.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -1074,7 +1074,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yH1-Zk-c08">
-                                <rect key="frame" x="70" y="83" width="305.5" height="660.5"/>
+                                <rect key="frame" x="70" y="83" width="305.5" height="655.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="محفز كتابي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgl-Vu-VW1">
                                         <rect key="frame" x="115" y="0.0" width="76" height="20.5"/>
@@ -1083,10 +1083,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="rZM-ej-Clk">
-                                        <rect key="frame" x="0.0" y="28.5" width="305.5" height="632"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="305.5" height="627"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gX2-d8-9HK">
-                                                <rect key="frame" x="0.0" y="305" width="82.5" height="22"/>
+                                                <rect key="frame" x="0.0" y="302.5" width="82.5" height="22"/>
                                                 <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Previous" image="chevron.left" catalog="system"/>
                                                 <connections>
@@ -1094,10 +1094,10 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zRQ-GP-hoq">
-                                                <rect key="frame" x="132.5" y="252" width="72.5" height="128"/>
+                                                <rect key="frame" x="132.5" y="249.5" width="72.5" height="128"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-ye-f55">
-                                                <rect key="frame" x="255" y="305" width="50.5" height="22"/>
+                                                <rect key="frame" x="255" y="302.5" width="50.5" height="22"/>
                                                 <color key="tintColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Next" image="chevron.right" catalog="system"/>
                                                 <connections>
@@ -1112,11 +1112,11 @@
                                 </constraints>
                             </stackView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xC4-DE-dnP">
-                                <rect key="frame" x="0.0" y="764" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="759" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" id="zDG-mx-wDn">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bsa-N8-AuX">
-                                            <rect key="frame" x="20" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="20" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="المعنى">
                                                 <color key="titleColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1131,7 +1131,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="0Xp-0K-s8Y">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VPA-iI-1Cd">
-                                            <rect key="frame" x="82" y="7" width="46" height="30"/>
+                                            <rect key="frame" x="82" y="12" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="جملة">
                                                 <color key="titleColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1146,7 +1146,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="PG4-WV-41u">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vRM-cy-GQo">
-                                            <rect key="frame" x="144" y="7" width="76" height="30"/>
+                                            <rect key="frame" x="144" y="12" width="76" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="الصوت الأول">
                                                 <color key="titleColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1161,7 +1161,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="7O2-wx-VkG">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cT4-XC-Hnc">
-                                            <rect key="frame" x="236" y="7" width="77" height="30"/>
+                                            <rect key="frame" x="236" y="12" width="77" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="المقطع الأول">
                                                 <color key="titleColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1176,7 +1176,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="qPh-RT-jh7">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bd3-Oq-0DF">
-                                            <rect key="frame" x="329" y="7" width="53" height="30"/>
+                                            <rect key="frame" x="329" y="12" width="53" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="الحرف الأول">
                                                 <color key="titleColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1191,7 +1191,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="zdL-gR-Ym2">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kr9-aY-vqr">
-                                            <rect key="frame" x="398" y="7" width="0.0" height="30"/>
+                                            <rect key="frame" x="398" y="12" width="0.0" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="الكلمة مكتوبة">
                                                 <color key="titleColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1206,7 +1206,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="GU7-KW-UAu">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PuN-9I-TGl">
-                                            <rect key="frame" x="414" y="7" width="0.0" height="30"/>
+                                            <rect key="frame" x="414" y="12" width="0.0" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="الكلمة منطوقة">
                                                 <color key="titleColor" red="0.99602228400000004" green="0.68306756020000003" blue="0.61213427779999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
