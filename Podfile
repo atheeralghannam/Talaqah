@@ -3,14 +3,14 @@
 
 target 'Talaqah' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+
 
   # Pods for Talaqah
-pod 'Firebase/Analytics'
-pod 'Firebase/Auth'
-pod 'Firebase/Firestore'
-pod 'Firebase/Database'
-pod 'Firebase/Storage'
-pod 'FirebaseUI/Storage'
+pod 'Firebase/Analytics',:modular_headers => true
+pod 'Firebase/Auth',:modular_headers => true
+pod 'Firebase/Firestore',:modular_headers => true
+pod 'Firebase/Database',:modular_headers => true
+pod 'Firebase/Storage',:modular_headers => true
+pod 'FirebaseUI/Storage',:modular_headers => true
 end
 

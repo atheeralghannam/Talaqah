@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		169BE3DED11B1B712B4101C4 /* libPods-Talaqah.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6CF625B5EDB184158F1572C /* libPods-Talaqah.a */; };
 		208F16772235EAAB002CF75F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F16762235EAAB002CF75F /* AppDelegate.swift */; };
 		208F16792235EAAB002CF75F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208F16782235EAAB002CF75F /* LoginViewController.swift */; };
 		208F167C2235EAAB002CF75F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 208F167A2235EAAB002CF75F /* Main.storyboard */; };
@@ -25,7 +26,6 @@
 		88925F4623F48C1C00425C75 /* getTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88925F4523F48C1C00425C75 /* getTrial.swift */; };
 		88966671241FBC0600A4CE20 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88966670241FBC0600A4CE20 /* ProgressViewController.swift */; };
 		88CB23A6240405E40099A3C2 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CB23A5240405E40099A3C2 /* ResultController.swift */; };
-		AD04D3E601C8476BEDA32D34 /* Pods_Talaqah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B68241B9D7332D6CEADEED /* Pods_Talaqah.framework */; };
 		F5096F4C23E5C4AC00078322 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5096F4B23E5C4AC00078322 /* Constants.swift */; };
 		F50DC0732402ED1100604AAE /* SelsectWordsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DC0722402ED1100604AAE /* SelsectWordsController.swift */; };
 		F50DC0752402ED3100604AAE /* SelectCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50DC0742402ED3100604AAE /* SelectCategoriesController.swift */; };
@@ -49,7 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		14B68241B9D7332D6CEADEED /* Pods_Talaqah.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talaqah.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		208F16732235EAAB002CF75F /* Talaqah.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talaqah.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		208F16762235EAAB002CF75F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		208F16782235EAAB002CF75F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		88966670241FBC0600A4CE20 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		88CB23A5240405E40099A3C2 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		AD974BAE09CCA177C47AC5CC /* Pods-Talaqah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talaqah.debug.xcconfig"; path = "Target Support Files/Pods-Talaqah/Pods-Talaqah.debug.xcconfig"; sourceTree = "<group>"; };
+		C6CF625B5EDB184158F1572C /* libPods-Talaqah.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Talaqah.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5096F4B23E5C4AC00078322 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F50DC0722402ED1100604AAE /* SelsectWordsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelsectWordsController.swift; sourceTree = "<group>"; };
 		F50DC0742402ED3100604AAE /* SelectCategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoriesController.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD04D3E601C8476BEDA32D34 /* Pods_Talaqah.framework in Frameworks */,
+				169BE3DED11B1B712B4101C4 /* libPods-Talaqah.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +222,7 @@
 		FCE6F9B21A679FDE6102A64D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				14B68241B9D7332D6CEADEED /* Pods_Talaqah.framework */,
+				C6CF625B5EDB184158F1572C /* libPods-Talaqah.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 				208F166F2235EAAB002CF75F /* Sources */,
 				208F16702235EAAB002CF75F /* Frameworks */,
 				208F16712235EAAB002CF75F /* Resources */,
-				DF15A5668FEF7CC8C72A5BD0 /* [CP] Embed Pods Frameworks */,
+				CF0680E53E9D52F28553BD4D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,21 +321,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DF15A5668FEF7CC8C72A5BD0 /* [CP] Embed Pods Frameworks */ = {
+		CF0680E53E9D52F28553BD4D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talaqah/Pods-Talaqah-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Talaqah/Pods-Talaqah-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Talaqah/Pods-Talaqah-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Talaqah/Pods-Talaqah-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Talaqah/Pods-Talaqah-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Talaqah/Pods-Talaqah-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
